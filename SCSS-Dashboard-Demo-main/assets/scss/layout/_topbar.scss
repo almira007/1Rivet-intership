@@ -1,0 +1,25 @@
+.topbar {
+  height: $header-height;
+  flex-shrink: 0;
+  padding: 0 30px;
+
+  .search-wrapper .icon {
+    color: #000000;
+  }
+
+  .search-wrapper .search {
+    border: 0;
+    padding: 10px 15px;
+    font-weight: 500;
+  }
+
+  .search-wrapper .search:focus,
+  .search-wrapper .search:focus-visible {
+    outline: none;
+  }
+
+  .search-wrapper .search::placeholder {
+    color: #000000;
+  }
+
+}

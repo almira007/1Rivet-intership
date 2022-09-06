@@ -1,0 +1,25 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+  }
+  @mixin bd-radius($value : 20px) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+ }
+ 
+@mixin bd-shadow($top, $left, $blur, $color) {
+  -webkit-box-shadow: $top $left $blur $color;
+  -moz-box-shadow: $top $left $blur $color;
+  box-shadow: $top $left $blur $color;
+}
+
+@mixin  progress-bar-color($percentage,$bgcolor){
+  width:$percentage ;
+  background-color: $bgcolor;
+}
+@mixin progress-position {
+  position: absolute;
+  height: 100%;
+  width: 76%;
+}

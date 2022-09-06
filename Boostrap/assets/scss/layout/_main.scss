@@ -1,0 +1,40 @@
+.bg-color{
+    height: 850px;
+    width: 200px;
+    background-color: #2a2e3e;
+    border-radius: 12px;
+}
+.right-aside-bg{
+    height: 50px;
+    width: 160px;
+    background-color: rgba($color: #555559, $alpha: 0.2);
+    // background-color: #2a2e3e;
+    border-radius: 6px;
+}
+.grah-img{
+    height: 400px;
+    width: 1450px;
+    background: #595d69;
+}
+.space{
+    padding-top: 15px;
+}
+
+.card-bg{
+    background-color: #2a2e3e;
+
+}
+.icon-radius{
+    padding:10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.icon-topbrand{
+    background-color: rgba($color: $primary, $alpha: 0.3);
+}
+.icon-topstaff{
+    background-color: rgba($color: $success, $alpha: 0.3);
+}
+.icon-bestsellers{
+    background-color: rgba($color: $pink, $alpha: 0.3);
+}

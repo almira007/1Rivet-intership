@@ -1,0 +1,15 @@
+{
+  "name": "new-scss-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass assets/Scss/style.scss assets/Css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "build": "^0.1.4"
+  }
+}

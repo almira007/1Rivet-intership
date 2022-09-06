@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color:#fff;
+    color: #000000;
+    overflow: hidden;
+}
+.img1 {
+    height: 50px;
+    width: 50px;
+    max-width: 100%;
+}
+
+table th{
+    position: sticky;
+    top: 0;
+}

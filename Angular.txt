@@ -1,0 +1,32 @@
+1. Angular 13 and 14 Feature
+   Angular 14 :-
+  1. Stand-alone Components:-
+     The Angular 14 modules are optional; however, the goal is to move away from the existing setup by building pipes, directives, and components.
+     In order to make Ng modules optional on stand-alone components, Angular has issued RFC (Request for Comments). These modules would not be obsolete in the Angular 14 
+     update but will become provisional to keep up with the compatibility of the existing Angular libraries and applications.
+  2. Strictly Typed Forms:
+     The new Angular version update completely rectifies the major Github issue, i.e., executing strict typing for Angular reactive forms package. The strictly typed forms 
+     will enhance a modern-driven approach for Angular to function seamlessly with the existing forms.
+  3. Angular CLI Auto-Completion:
+     The best part about the Angular CLI auto-completion is that you can improve productivity by delivering the required commands to create modules, directives, and 
+     components for your new/existing project.
+  4. Improved Template Diagnostics:
+     The new Angular 14 update comes with enhanced template diagnostics to shield the developers from generic errors through compiler reconciliation to typescript code.
+  5. Angular DevTools:
+     In offline mode, you can use the Angular DevTools debugging plugin.
+
+2. WorkSpace : collection of projects
+               command : ng new myworkspace
+3. project : collection of librabries
+4. library : A library is a collection of components, services, directives etc. that can be shared across different Angular projects.
+             You generate a new library just like you would a component, service or anything else:
+                 command : ng g library mylibrary
+
+5. Dependencies : In package.json file, there is an object called dependencies and it consists of all the packages that are used in the project with its version number. 
+6. Dev Dependencies : In package.json file, there is an object called as dev Dependencies and it consists of all the packages that are used in the project in its development 
+                     phase and not in the production or testing environment with its version number.
+7. Peer Dependencies: In package.json file, there is an object called as peerDependencies and it consists of all the packages that are exactly required in the project or to 
+                      the person who is downloading and the version numbers should also be the same.
+8. version "14.0.0"   :   defines version
+9. version "^14.0.0"  : ^ freezes the major number only.
+10. version"~14.0.0"  : ~ freezes major and minor numbers.

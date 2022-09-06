@@ -1,0 +1,22 @@
+.main-wrapper {
+    height: 100%;
+    flex-grow: 1;
+    overflow: auto;
+    background-color: #fafafa;
+    padding: 30px;
+
+
+    /* Page Title */
+    .page-title {
+        margin: 0;
+    }
+
+    .category-dropdown {
+        display: inline-block;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: #ffffff;
+        color: $black;
+        padding: 8px 15px;
+    }
+}

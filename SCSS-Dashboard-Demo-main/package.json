@@ -1,0 +1,22 @@
+{
+  "name": "scss-dashboard-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass assets/scss/styles.scss assets/css/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binulad/SCSS-Dashboard-Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binulad/SCSS-Dashboard-Demo/issues"
+  },
+  "homepage": "https://github.com/binulad/SCSS-Dashboard-Demo#readme",
+  "dependencies": {
+    "sass": "^1.54.5"
+  }
+}

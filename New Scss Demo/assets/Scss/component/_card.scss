@@ -1,0 +1,95 @@
+/* Card List */
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content:space-around;
+}
+
+.course-item {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.course-item+.course-item {
+    margin-left: 38px;
+}
+
+.card {
+    background-color: #ffffff;
+    @include bd-radius();
+    @include bd-shadow(3px, 3px, 0, $black);
+    overflow: hidden;
+
+
+    .card-header {
+        height: 150px;
+        overflow: hidden;
+    }
+
+
+    .card-body {
+        padding: 20px 30px;
+
+
+        .card-title {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: $black;
+        }
+
+        .card-desc {
+            color: #8c8c8c;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .user-list {
+            display: flex;
+            align-items: center;
+
+
+            .user-item {
+                display: inline-block;
+                height: 35px;
+                width: 35px;
+                border: 2px solid #ffffff;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+
+        .user-item+.user-item {
+            margin-left: -5px;
+        }
+
+        /* Progress */
+        .progress-wrapper {
+            position: relative;
+            display: inline-block;
+            height: 5px;
+            width: 100%; 
+            background-color: #ebebeb;
+            
+        }
+        .progress-wrapper .progress-bar1 {
+            @include progress-position();
+            @include  progress-bar-color(76%,#5f91f0);
+        }
+        .progress-wrapper .progress-bar2 {
+            @include progress-position();
+            @include  progress-bar-color(32%,#f08d5f);
+        }
+        .progress-wrapper .progress-bar3 {
+            @include progress-position();
+            @include  progress-bar-color(46%,#6bf05f);
+        }
+        .progress-value {
+            color: #8c8c8c;
+            font-size: 18px;
+        }
+
+    }
+
+}

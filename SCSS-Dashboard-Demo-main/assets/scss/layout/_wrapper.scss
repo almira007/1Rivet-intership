@@ -1,0 +1,17 @@
+.page-wrapper {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.main-wrapper {
+  height: 100%;
+  flex-grow: 1;
+  overflow: auto;
+  background-color: #fafafa;
+  padding: 30px;
+}

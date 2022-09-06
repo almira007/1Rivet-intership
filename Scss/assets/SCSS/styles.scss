@@ -1,0 +1,54 @@
+@import "base/index";
+@import "components/index";
+@import "layout/index";
+
+
+
+/*Media Query*/
+@media only screen and (max-width:1200px) {
+    .card-wrapper{
+        width: 25%;
+    } 
+    body{
+        background-color: #7fffd4;
+    }  
+}
+
+@media only screen and (max-width:900px) {
+    .card-wrapper{
+        width: 50%;
+    }  
+    body{
+        background-color:rgb(137, 159, 194);
+    }
+    table{
+        overflow: auto;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .card-wrapper{
+        width: 100%;
+    }  
+    .sidebar-wrapper{
+        position: relative;
+    }
+    .sidebar{
+        position:absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        background-color:#fff;
+    }
+    body{
+        background-color: #eb97a2;
+    }
+    
+ }
+ 
+@media (max-width:900px){
+    .wrapper{
+        overflow: auto;
+    }
+}

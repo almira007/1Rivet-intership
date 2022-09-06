@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
+    "icons": "^1.0.0",
+    "sass": "^1.54.5"
+  },
+  "scripts": {
+    "build": "sass assets/scss/style.scss assets/css/styles.css --watch"
+  },
+  "name": "boostrap",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

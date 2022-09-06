@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1c28;
+    color: #fff;
+}
+.img1 {
+    height: 50px;
+    width: 50px;
+    max-width: 100%;
+}
+
+// .rounded-circle{
+//     height:50px;
+//     width: 50px;
+//     max-width: 100%;
+//     border-radius: 50px;
+// }
+.bg-secondary{
+    background-color: #2a2e3e;
+}
+.icon-space {
+    margin-left: 5px;
+}
+
+.icon-round {
+    background: #2f3042;
+    padding: 10px;
+    border-radius: 50%;
+}
