@@ -14,23 +14,20 @@
 <body>
     <div class="d-flex h-100">
         <!--Start Aside-->
-        <aside class="d-flex h-100 flex-column">
+        <aside class="d-flex h-100 flex-column shadow">
             <!--brand logo-->
-            <figure class="d-flex align-items-center justify-content-center py-3 px-4">
-                <h6>
-                    <span class="text-success p-1"><i
-                            class="fas fa-light fa-heart-pulse text-green icon-size"></i></span>
-                    <span class="text-muted p-1">FITTLE</span>
-                </h6>
-            </figure>
+                <div class="brand align-items-center justify-content-center p-4 sidebar-icon">
+                    <span class="fas fa-light fa-heart-pulse text-primary icon-size me-2"> </span>
+                    <span class="text-secondary font-size-aside">FITTLE</span>
+                    </div>
             <!--End brand logo-->
             <!--Start Nav-->
-            <div class="d-flex align-items-center flex-column h-100">
+            <div class="d-flex  flex-column h-100">
                 <ul class="nav flex-column flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link active text-green w-100" href="#">
-                            <span class="fas fa-regular fa-gauge-simple-high m-4"></span><br>
-                            <span>Dashboard</span>
+                    <li class="nav-item d-flex align-items-center justify-content-center m-0">
+                        <a class="nav-link active w-100" href="#">
+                            <span class="fas fa-regular fa-gauge-simple-high m-4 text-primary"></span><br>
+                            <span class="text-primary">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -78,10 +75,10 @@
         <!--Start section-->
         <section class="d-flex flex-column flex-grow-1 overflow-auto">
             <!--Start header-->
-            <header class="py-3 px-4 d-flex align-items-center justify-content-between">
+            <header class="p-2 d-flex align-items-center justify-content-between brand shadow">
                 <!--Serachbar-->
-                <div class="input-group me-3 px-2 py-1">
-                    <span class="bi bi-search input-group-text border-0"></span>
+                <div class="input-group me-4">
+                    <span class="bi bi-search input-group-text border-0 text-muted bg-white"></span>
                     <input type="search" class="form-control border-0" placeholder="Search..........">
                 </div>
                 <!--Action bar-->
@@ -105,23 +102,23 @@
             </header>
             <!--End header-->
             <!--Start main-->
-            <main class="body-bg border flex-grow-1 overflow-auto">
+            <main class="body-bg flex-grow-1 overflow-auto">
                 <div class="g-4">
-                    <h2 class="text-black m-4">Dashboard</h2>
-                    <span class="text-muted m-4">Hello, Ryan! Check out what's happening today!</span>
+                    <h5 class="text-black m-4">Dashboard</h5>
+                    <span class="text-secondary m-4">Hello, Ryan! Check out what's happening today!</span>
                 </div>
                 <div class="row my-4 mx-0 d-flex">
                     <div class="col-12 flex-column justify-content-center">
-                        <div class="d-flex rounded back-bg justify-content-between p-lg-4 m-2 rounded ">
+                        <div class="d-flex rounded back-bg justify-content-between p-lg-4 m-2 shadow ">
                             <div class="d-flex align-items-center">
                                 <div class="me-3">
                                     <span
-                                        class="fas fa-solid fa-exclamation border border-1 icon-color icon-background rounded-circle p-2"></span>
+                                        class="fas fa-solid fa-exclamation border border-1  icon-background rounded-circle p-2"></span>
                                 </div>
                                 <div>
-                                    <span class="text-muted me-1">Thanks for joining YPC! Go ahead and </span>
+                                    <span class="text-secondary me-1">Thanks for joining YPC! Go ahead and </span>
                                 </div>
-                                <div class=""><a href=""><button class="btn rounded-pill btn1 px-5 py-2 ">Create
+                                <div class=""><a href=""><button class="btn rounded-pill text-white bg-primary px-5 py-2 ">Create
                                             Now</button></a>
                                 </div>
                             </div>
@@ -131,17 +128,16 @@
                         </div>
 
                         <div class="col-12 flex-column justify-content-center">
-                            <div class="d-flex rounded back-bg justify-content-between p-lg-4 m-2 rounded ">
+                            <div class="d-flex rounded back-bg justify-content-between p-lg-4 m-2 shadow">
                                 <div class="d-flex align-items-center">
                                     <div class="me-3">
-                                        <span
-                                            class="fas fa-solid fa-exclamation border border-1 icon-color icon-background rounded-circle p-2"></span>
+                                        <span class="fas fa-solid fa-exclamation border border-1 icon-background rounded-circle p-2"></span>
                                     </div>
                                     <div>
-                                        <span class="text-muted me-1">You have 2 unread botifications.</span>
+                                        <span class="text-secondary me-1">You have 2 unread botifications.</span>
                                     </div>
                                     <div class=""><a href=""><button
-                                                class="btn-back btn rounded-pill px-5 py-2 text-green">Check
+                                                class="btn rounded-pill px-5 py-2 text-primary bg-green">Check
                                                 Now</button></a>
                                     </div>
                                 </div>
@@ -153,12 +149,12 @@
                     </div>
                 </div>
                 <div class="row my-4 mx-0 ">
-                    <div class="col-12 col-lg-6 col-sm-12 table-wrap overflow-auto">
+                    <div class="col-12 col-lg-6 col-sm-12 table-wrap overflow-auto shadow">
                         <table class="table text-black back-bg">
                             <thead>
                                 <tr>
-                                    <th scope="col" class="text-black">New Brisbane Instructors-02</th>
-                                    <th scope="col" class="text-muted  me-5"><span class="bi bi-eye"></span> View
+                                    <th scope="col" class="text-black bg-white font-size">New Brisbane Instructors-02</th>
+                                    <th scope="col" class="text-secondary  me-5 bg-white"><span class="bi bi-eye"></span> View
                                         All<span class="i bi-caret-right-fill"></span></th>
                                 </tr>
 
@@ -176,7 +172,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -185,7 +181,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">24 Horsh Fitness. | 1050 Brown Street,
+                                                <span class="text-secondary">24 Horsh Fitness. | 1050 Brown Street,
                                                     Brisbane</span>
                                             </div>
                                         </div>
@@ -196,14 +192,14 @@
                                         <div class="d-flex mt-2">
                                             <div>
                                                 <div class="">
-                                                    <a href=""><button class="btn rounded-pill btn1 px-3 py-2 ">Part
+                                                    <a href=""><button class="btn rounded-pill text-white bg-primary px-3 py-2 ">Part
                                                             Time</button></a>
 
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Arial
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Arial
                                                             Yoga</button></a>
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Yoga</button></a>
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Yoga</button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -220,7 +216,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -229,7 +225,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">24 Horsh Fitness. | 1050 Brown Street,
+                                                <span class="text-secondary">24 Horsh Fitness. | 1050 Brown Street,
                                                     Brisbane</span>
                                             </div>
                                         </div>
@@ -241,13 +237,13 @@
                                             <div>
                                                 <div class="">
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Part
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Part
                                                             Time</button></a>
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Full
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Full
                                                             Time</button></a>
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Yoga</button></a>
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Yoga</button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,7 +261,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -274,7 +270,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">24 Horsh Fitness. | 1050 Brown Street,
+                                                <span class="text-secondary">24 Horsh Fitness. | 1050 Brown Street,
                                                     Brisbane</span>
                                             </div>
                                         </div>
@@ -286,13 +282,13 @@
                                             <div>
                                                 <div class="">
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Part
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Part
                                                             Time</button></a>
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Arial
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Arial
                                                             Yoga</button></a>
                                                     <a href=""><button
-                                                            class="btn-back btn rounded-pill px-3 py-1 text-green">Casual</button></a>
+                                                            class="btn rounded-pill px-3 py-1 text-primary bg-green">Casual</button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -302,13 +298,13 @@
                         </table>
 
                     </div>
-                    <div class="col-12 col-lg-6 col-sm-12 table-wrap overflow-auto">
+                    <div class="col-12 col-lg-6 col-sm-12 table-wrap overflow-auto shadow">
                         <table class="table text-black back-bg">
                             <thead class="">
                                 <tr>
 
-                                    <th scope="col" class="text-black">Most Popular Brisbane Classes + 02</th>
-                                    <th scope="col" class="text-muted me-5"><span class="bi bi-eye"></span> View
+                                    <th scope="col" class="text-black bg-white font-size">Most Popular Brisbane Classes + 02</th>
+                                    <th scope="col" class="text-secondary me-5 bg-white"><span class="bi bi-eye"></span> View
                                         All<span class="bi bi-caret-right-fill"></span></th>
 
                                 </tr>
@@ -326,7 +322,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -335,7 +331,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">24 Horsh Fitness. | 1050 Brown Street,
+                                                <span class="text-secondary">24 Horsh Fitness. | 1050 Brown Street,
                                                     Brisbane</span>
                                             </div>
                                         </div>
@@ -353,7 +349,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -362,7 +358,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">12 Hours Fitness, | Melbourne, Victoria,
+                                                <span class="text-secondary">12 Hours Fitness, | Melbourne, Victoria,
                                                     Australia</span>
                                             </div>
                                         </div>
@@ -380,7 +376,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -389,7 +385,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">24 Horsh Fitness. | Sydney CBD, New South
+                                                <span class="text-secondary">24 Horsh Fitness. | Sydney CBD, New South
                                                     wales, Australia</span>
                                             </div>
                                         </div>
@@ -407,7 +403,7 @@
                                     <td>
                                         <div>
                                             <div class="ps-2">
-                                                <div class="text-muted"><span class="bi bi-clock p-1">5min</span></div>
+                                                <div class="text-secondary"><span class="bi bi-clock p-1">5min</span></div>
                                             </div>
                                         </div>
                                     </td>
@@ -416,7 +412,7 @@
                                     <td>
                                         <div class="d-flex mt-2">
                                             <div>
-                                                <span class="text-muted">24 Horsh Fitness. | 1050 Brown Street,
+                                                <span class="text-secondary">24 Horsh Fitness. | 1050 Brown Street,
                                                     Brisbane</span>
                                             </div>
                                         </div>

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  inputvariable: string = "Hi i am your parent";
+  constructor(){
+
+  }
 }

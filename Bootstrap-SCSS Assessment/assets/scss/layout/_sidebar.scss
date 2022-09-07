@@ -4,7 +4,7 @@ aside {
         &-item {
             position: relative;
             .active {
-                background-color: rgba($color: $green, $alpha: 0.1);
+                background-color: rgba($color: $primary, $alpha: 0.1);
                 position: relative;
                 &::after{
                     position: absolute;
@@ -13,14 +13,14 @@ aside {
                     height: 10px;
                     right: 0;
                     top: 98px;
-                    border: 8px solid $green;
+                    border: 8px solid $primary;
                     border-left: 5px solid transparent;
                     border-top: 5px solid transparent;
                 }
             }
 
             &:hover {
-                background-color: rgba($color: $green, $alpha: 0.2);
+                background-color: rgba($color: $primary, $alpha: 0.2);
                 
             }
 
@@ -29,4 +29,14 @@ aside {
             }
         }
     }
+}
+.brand{
+    height: 70px;
+    
+}
+.sidebar-icon{
+    font-weight: 700;
+}
+.font-size-aside{
+    font-size: 21px;
 }
