@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
-import { StudentComponent } from './student/student.component';
+import { ChildComponent } from './parent/child/child.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
-    StudentComponent
+    ChildComponent
   ],
   imports: [
     BrowserModule,

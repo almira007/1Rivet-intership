@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent implements OnInit {
+   //Parent to pass Data Child
+  currentItem: string = "Hi i am your parent Component";
+
+   //Child to pass Data Parent
+   ChildToparent = ['Ed Sheeran', 'Prince Indah', 'Emma Jalamo'];
+
+   addArtists(newOutput: any) {
+    this.ChildToparent.push(newOutput);
+  }
 
   count:number=1;
   constructor() { }

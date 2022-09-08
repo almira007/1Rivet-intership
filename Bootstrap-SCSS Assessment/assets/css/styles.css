@@ -21,9 +21,8 @@ body {
   max-width: 100%;
 }
 
-table th {
-  position: sticky;
-  top: 0;
+.btn {
+  border: none;
 }
 
 :root {
@@ -7957,7 +7956,7 @@ aside .nav-item .active::after {
   width: 10px;
   height: 10px;
   right: 0;
-  top: 98px;
+  bottom: 0;
   border: 8px solid #1aa19b;
   border-left: 5px solid transparent;
   border-top: 5px solid transparent;
@@ -8005,6 +8004,17 @@ aside .nav-item:not(:last-child) {
 
 .font-size {
   font-size: 1.5rem;
+}
+
+.icon-round {
+  background-color: #e9eaec;
+  padding: 13px;
+  color: #fff;
+  border-radius: 100%;
+  overflow: hidden;
+  height: 40px;
+  width: 30px;
+  flex-shrink: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
