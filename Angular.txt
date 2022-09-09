@@ -30,3 +30,39 @@
 8. version "14.0.0"   :   defines version
 9. version "^14.0.0"  : ^ freezes the major number only.
 10. version"~14.0.0"  : ~ freezes major and minor numbers.
+
+
+
+H.w. 09-09-2022
+
+1. what is a Pure function.
+   In simple terms, pure functions do not have an internal state. Therefore, all operations performed in pure functions are not affected by their state. As a result, the same
+   input parameters will give the same deterministic output regardless of how many times you run the function.
+
+  ex. function add(a,b) { 
+      return a + b
+     }
+     console.log(add(4,5))
+  =>Advantages of pure functions
+   .A pure function works as an independent function that gives the same output for the same inputs.
+   .Pure functions are readable because of independent behavior. Moreover, they are straightforward to debug.
+   .You can clone an external state into a pure function, but it does not change the purity of the function.
+   
+   what is Impure function
+   An impure function is a function that contains one or more side effects. It mutates data outside of its lexical scope and does not predictably produce the same output for 
+   the same input.
+
+  ex. var addNew = 0;
+     function add(a,b){ 
+     addNew =1; 
+     return a + b + addNew
+     }
+     console.log(add(4,5))
+ =>Advantages of Impure functions
+   .Impure functions can use an in-place solution to reduce the space complexity.
+   .In impure functions, the state can be modified to use the parent variable and call for the function compiling.
+
+  Pure functions vs. impure functions
+  .Pure functions do not have side effects. Impure functions can cause side effects.
+  .Pure functions return the same output if we use the same input parameters. However, impure functions give different outcomes when we pass the same arguments multiple times.
+  .Pure functions always return some results. Impure functions can execute without producing anything.
