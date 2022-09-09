@@ -1,6 +1,6 @@
 <h1>component for parent works!</h1>
 <div>
-    <app-child [myinput]="currentItem"(newOutputEvent)="addArtists($event)"></app-child>
+    <app-child [ChildList]="currentItem"(ParentList)="addArtists($event)"></app-child>
 
 </div>
 <ul>

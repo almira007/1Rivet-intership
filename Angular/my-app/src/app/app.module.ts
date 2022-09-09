@@ -7,6 +7,7 @@ import { ParentComponent } from './parent/parent.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { ChildComponent } from './parent/child/child.component';
 import { DescToIncComponent } from './desc-to-inc/desc-to-inc.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DescToIncComponent } from './desc-to-inc/desc-to-inc.component';
     AppComponent,
     ParentComponent,
     ChildComponent,
-    DescToIncComponent
+    DescToIncComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

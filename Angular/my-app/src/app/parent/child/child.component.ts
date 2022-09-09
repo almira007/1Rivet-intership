@@ -1,4 +1,4 @@
-import { Component,Input,Output,EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,21 +6,24 @@ import { Component,Input,Output,EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./child.component.scss']
 })
 export class ChildComponent implements OnInit {
-  //Parent to pass Data Child
-  @Input() myinput = '';
 
-  //Child to pass Data Parent
-  @Output() newOutputEvent = new EventEmitter<string>();
-  constructor() { }
+  /** used to receive data from parent - Parent to Child Communication */
+  @Input() public ChildList: string;
 
-  addNewArtist(val: string) {
-    this.newOutputEvent.emit(val);
+  /** used to emit event from child - Child to Parent Communication */
+  @Output() public ParentList: EventEmitter<string>;
+
+  constructor() {
+    this.ChildList = '';
+    this.ParentList = new EventEmitter<string>;
   }
 
-  ngOnInit() {  
+  ngOnInit() {
+    console.log(this.ChildList);
+  }
 
-    console.log(this.myinput); 
+  public addNew(val: string) {
+    this.ParentList.emit(val);
+  }
 
-    }  
-  
 }
