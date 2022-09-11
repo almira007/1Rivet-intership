@@ -8,6 +8,8 @@ import { UserAuthModule } from './user-auth/user-auth.module';
 import { ChildComponent } from './parent/child/child.component';
 import { DescToIncComponent } from './desc-to-inc/desc-to-inc.component';
 import { HeaderComponent } from './header/header.component';
+import { TwowayBindingComponent } from './twoway-binding/twoway-binding.component';
+import { SidbarComponent } from './sidbar/sidbar.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HeaderComponent } from './header/header.component';
     ParentComponent,
     ChildComponent,
     DescToIncComponent,
-    HeaderComponent
+    HeaderComponent,
+    TwowayBindingComponent,
+    SidbarComponent
   ],
   imports: [
     BrowserModule,

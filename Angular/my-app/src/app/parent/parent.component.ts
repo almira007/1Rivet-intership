@@ -12,9 +12,7 @@ export class ParentComponent implements OnInit {
    //Child to pass Data Parent
    ChildToparent = ['Ed Sheeran', 'Prince Indah', 'Emma Jalamo'];
 
-   addArtists(newOutput: any) {
-    this.ChildToparent.push(newOutput);
-  }
+   
 
   count:number=1;
   constructor() { }
@@ -23,6 +21,11 @@ export class ParentComponent implements OnInit {
     console.log("ngOnInit call",this.count);
     this.count++;
   }
+
+  addArtists(newOutput: any) {
+    this.ChildToparent.push(newOutput);
+  }
+  
   ngOnChanges(): void{
     console.log("ngOnChanges call",this.count);
     this.count++;
