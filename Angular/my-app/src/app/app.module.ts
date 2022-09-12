@@ -8,8 +8,13 @@ import { UserAuthModule } from './user-auth/user-auth.module';
 import { ChildComponent } from './parent/child/child.component';
 import { DescToIncComponent } from './desc-to-inc/desc-to-inc.component';
 import { HeaderComponent } from './header/header.component';
-import { TwowayBindingComponent } from './twoway-binding/twoway-binding.component';
 import { SidbarComponent } from './sidbar/sidbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { MainComponent } from './main/main.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
+import { NgifComponent } from './ngif/ngif.component';
+import { NgforComponent } from './ngfor/ngfor.component';
+import { NgswitchComponent } from './ngswitch/ngswitch.component';
 
 
 @NgModule({
@@ -19,8 +24,13 @@ import { SidbarComponent } from './sidbar/sidbar.component';
     ChildComponent,
     DescToIncComponent,
     HeaderComponent,
-    TwowayBindingComponent,
-    SidbarComponent
+    SidbarComponent,
+    FooterComponent,
+    MainComponent,
+    EventBindingComponent,
+    NgifComponent,
+    NgforComponent,
+    NgswitchComponent
   ],
   imports: [
     BrowserModule,

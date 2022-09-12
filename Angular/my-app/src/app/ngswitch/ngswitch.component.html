@@ -1,0 +1,18 @@
+<p>NgSwitch</p>
+<div class="container">
+    <div class="col-md-4">
+        <select (change)="setvalue($event)">
+           <option value="">---select---</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile">Mobile</option>
+            <option value="TV">TV</option>
+            <option value="Watching Matching">Watching Matching</option>
+        </select>
+    </div>
+    <div class="col-md-12" [ngSwitch]="choose">
+        <h4 *ngSwitchCase="'Laptop'">Laptop</h4>
+        <h4 *ngSwitchCase="'Mobile'">Mobile</h4>
+        <h4 *ngSwitchCase="'Tv'">TV</h4>
+        <h4 *ngSwitchDefault>Default</h4>
+    </div>
+</div>
