@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,8 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { NgifComponent } from './ngif/ngif.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { NgclassNgstyleComponent } from './ngclass-ngstyle/ngclass-ngstyle.component';
 
 
 @NgModule({
@@ -30,12 +34,15 @@ import { NgswitchComponent } from './ngswitch/ngswitch.component';
     EventBindingComponent,
     NgifComponent,
     NgforComponent,
-    NgswitchComponent
+    NgswitchComponent,
+    TwoWayBindingComponent,
+    NgclassNgstyleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule
+    UserAuthModule,
+    FormsModule
   
     
   ],
