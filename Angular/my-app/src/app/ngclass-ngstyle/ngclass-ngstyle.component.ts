@@ -12,4 +12,20 @@ export class NgclassNgstyleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public mypro:boolean=true;
+
+  public mystyle1:string="15px"
+
+  public isActive:boolean = false;
+
+  public  mltclasses={
+    class1:true,
+    class2:false,
+    class3:true
+  }
+
+  public mltstyle={
+    'background': 'pink',
+    'border': '10px solid green'
+  }
 }

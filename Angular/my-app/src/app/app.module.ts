@@ -19,6 +19,10 @@ import { NgforComponent } from './ngfor/ngfor.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { NgclassNgstyleComponent } from './ngclass-ngstyle/ngclass-ngstyle.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { MastercomponentComponent } from './mastercomponent/mastercomponent.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
 
 
 @NgModule({
@@ -36,14 +40,17 @@ import { NgclassNgstyleComponent } from './ngclass-ngstyle/ngclass-ngstyle.compo
     NgforComponent,
     NgswitchComponent,
     TwoWayBindingComponent,
-    NgclassNgstyleComponent
+    NgclassNgstyleComponent,
+    PipesComponent,
+    MastercomponentComponent,
+    NgStyleComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
     FormsModule
-  
     
   ],
   providers: [],
