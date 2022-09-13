@@ -1,0 +1,81 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Percent Pipe</h4>
+        <p ngNonBindable>{{0.25645 | percent}}</p>
+        <p>{{0.25645 | percent}}</p>
+        <hr>
+        <p ngNonBindable>{{0.25645 | percent:'3.1-5'}}</p>
+        <p>{{0.25645 | percent:'3.1-5'}}</p>
+        <hr>
+        <p ngNonBindable>{{0.25645 | percent:'1.5-5'}}</p>
+        <p>{{0.25645 | percent:'1.5-5'}}</p>
+
+        <h4 class="card-title">Currency Pipe</h4>
+        <p ngNonBindable>{{1234567.5555 | currency}}</p>
+        <p>{{1234567.555 | currency}}</p>
+        <hr>
+    
+        <p ngNonBindable>{{1234567 | currency:'INR'}}</p>
+        <p>{{1234567 | currency:'INR'}}</p>
+        <hr>
+        
+        <p ngNonBindable>{{1234567 | currency:'CAD': 'symbol' :'1.2-5'}}</p>
+        <p>{{1234567 | currency:'CAD':'symbol' :'1.2-5'}}</p>
+        <hr>
+        
+        <p ngNonBindable>{{1234567 | currency:'CAD': 'symbol-narrow' :'1.2-5'}}</p>
+        <p>{{1234567 | currency:'CAD':'symbol-narrow' :'1.2-5'}}</p>
+        <hr>
+        
+        <p ngNonBindable>{{1234567.555 | currency:'INR':'symbol':'1.0-0'}}</p>
+        <p>{{1234567.555 | currency:'INR':'symbol':'1.0-0'}}</p>
+
+        <h4 class="card-title">Decimal Pipe</h4>
+        <p ngNonBindable>{{123456.14 | number}}</p>
+        <p>{{123456.14 | number}}</p>
+        <hr>
+        <p ngNonBindable>{{1.3456 | number:'3.1-2'}}</p>
+        <p>{{1.3456 | number:'3.1-2'}}</p>
+        <hr>
+        <p ngNonBindable>{{123456789 | number:'1.2-2'}}</p>
+        <p>{{123456789 | number:'1.2-2'}}</p>
+        <hr>
+        <p ngNonBindable>{{1.2 | number:'4.5-5'}}</p>
+        <p>{{1.2 | number:'4.5-5'}}</p>
+
+        <h4 class="card-title">Upper Case Pipe</h4>
+        <p ngNonBindable>{{'Welcome to Angular Pipes' | uppercase}}</p>
+        <p>{{'Welcome to Angular Pipes' | uppercase}}</p>
+
+        <h4 class="card-title">Lower Case Pipe</h4>
+        <p ngNonBindable>{{'Welcome to Angular Pipes' | lowercase}}</p>
+        <p>{{'Welcome to Angular Pipes' | lowercase}}</p>
+
+        <h4 class="card-title">Percent Pipe</h4>
+        <p ngNonBindable>{{0.25645 | percent}}</p>
+        <p>{{0.25645 | percent}}</p>
+        <hr>
+        <p ngNonBindable>{{0.25645 | percent:'3.1-5'}}</p>
+        <p>{{0.25645 | percent:'3.1-5'}}</p>
+        <hr>
+        <p ngNonBindable>{{0.25645 | percent:'1.5-5'}}</p>
+        <p>{{0.25645 | percent:'1.5-5'}}</p>
+
+        <h4 class="card-title">Slice Pipe</h4>
+        <p ngNonBindable>{{[1,2,3,4,5,6] | slice : 2}}</p>
+        <p>{{[1,2,3,4,5,6] | slice : 2}}</p>
+        <hr>
+        <p ngNonBindable>{{[1,2,3,4,5,6] | slice : 2:4}}</p>
+        <p>{{[1,2,3,4,5,6] | slice : 2:4}}</p>
+        <hr>
+        <p ngNonBindable>{{[1,2,3,4,5,6] | slice : 1:-2}}</p>
+        <p>{{[1,2,3,4,5,6] | slice : 1:-2}}</p>
+        <hr>
+        
+        <h4 class="card-title">Json Pipe</h4>
+        <p ngNonBindable>{{data | json}}</p>
+        <p>{{data | json}}</p>
+
+       
+    </div>
+</div>

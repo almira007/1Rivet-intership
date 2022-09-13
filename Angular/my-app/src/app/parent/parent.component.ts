@@ -22,7 +22,7 @@ export class ParentComponent implements OnInit {
     this.count++;
   }
 
-  addArtists(newOutput: any) {
+  addItems(newOutput: any) {
     this.ChildToparent.push(newOutput);
   }
   

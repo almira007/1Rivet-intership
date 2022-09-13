@@ -1,1 +1,5 @@
 <p>ngclass-ngstyle works!</p>
+<div class="box" [class.myclass]="mypro">class binding</div>
+<div class="box" [ngClass]="'mltclasses'">Class Multiple using</div>
+<div class="box" [style.margin]="isActive? mystyle1 : '5px'">style bindning</div>
+<div class="box" [ngStyle]="mltstyle">Style Multiple using</div>
