@@ -1,0 +1,12 @@
+
+<div class="d-flex h-100">
+  <!--Sidebar comonent-->
+  <app-sidebar></app-sidebar>
+  <section class="d-flex flex-column flex-grow-1 overflow-auto">
+    <!--TopBar component-->
+    <app-topbar></app-topbar>
+    <main class="body-bg flex-grow-1 overflow-auto p-5">
+      <router-outlet></router-outlet>
+    </main>
+  </section>
+</div>
