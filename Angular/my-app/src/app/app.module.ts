@@ -23,6 +23,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { MastercomponentComponent } from './mastercomponent/mastercomponent.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { NgClassComponent } from './ng-class/ng-class.component';
     PipesComponent,
     MastercomponentComponent,
     NgStyleComponent,
-    NgClassComponent
+    NgClassComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

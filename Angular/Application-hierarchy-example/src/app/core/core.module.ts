@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopbarComponent } from './components/navbar/topbar/topbar.component';
-import { SidebarComponent } from './components/navbar/sidebar/sidebar.component';
 
+import { CoreRoutingModule } from './core-routing.module';
+import { HeaderComponent } from './component/header/header.component';
+import { SidbarComponent } from './component/sidbar/sidbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    TopbarComponent,
-    SidebarComponent
+            HeaderComponent,
+            SidbarComponent,
+            FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CoreRoutingModule
   ],
-  exports : [
-    TopbarComponent,
-    SidebarComponent
+  exports:[
+    HeaderComponent,
+    SidbarComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }
