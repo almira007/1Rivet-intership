@@ -1,9 +1,9 @@
-<div class="d-flex h-100">
-    <app-sidbar></app-sidbar>
-    <section class="d-flex flex-column flex-grow-1 overflow-auto">
-      <app-header></app-header>
+<!-- <div class="d-flex h-100"> -->
+    <!-- <app-sidbar></app-sidbar> -->
+    <!-- <section class="d-flex flex-column flex-grow-1 overflow-auto h-100"> -->
+      <!-- <app-header></app-header>
       <main class="body-bg flex-grow-1 overflow-auto p-5 border border-dark ">
-        <router-outlet></router-outlet>
+        <router-outlet></router-outlet> -->
         <!-- <app-ngif></app-ngif>
         <app-ngfor></app-ngfor>
         <app-ngswitch></app-ngswitch>
@@ -15,6 +15,22 @@
         <app-ng-style></app-ng-style>
         <app-parent></app-parent>
         <app-desc-to-inc></app-desc-to-inc> -->
-      </main>
+      <!-- </main>
     </section>
-  </div>
+  </div> -->
+
+  <div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="margin-top: 2.5rem">
+          <app-header></app-header>
+        </div>
+    </nav>
+    <div>
+        <!-- <app-breadcrumb></app-breadcrumb> -->
+    </div>
+    <div class="container">
+        <router-outlet>
+            <!-- <div class="loading" *ngIf="objLoaderStatus"></div> -->
+        </router-outlet>
+    </div>
+</div>
