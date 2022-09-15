@@ -1,0 +1,24 @@
+<h1>Mentor Form</h1>
+
+<form #mentorForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <p>Name</p>
+        <input type="text" name="name" [(ngModel)]="model.name" required>
+        <div *ngIf="mentorForm?.form?.controls?.name?.errors?.required && isSubmitted">
+            Name is required.
+        </div>
+    </div>
+    <div>
+        <p>Age</p>
+        <input type="text" name="age" [(ngModel)]="model.age" required>
+        <div *ngIf="mentorForm?.form?.controls?.age?.errors?.required && isSubmitted">
+            Age is required.
+        </div>
+    </div>
+    <div>
+        <br>
+        <button type="submit">Submit</button>
+    </div>
+
+    {{model | json}}
+</form>

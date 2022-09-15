@@ -1,0 +1,54 @@
+<!-- <h1>{{name}}</h1>
+<button (click)="onClick()"></button>
+<img [src]='imgSrc' /> -->
+<br>
+<!-- ngIf -->
+<button routerLink="../mentor-form" *ngIf="isAddMode">Add Mentor</button>
+<button routerLink="../mentor-form" (click)="onClick()" *ngIf="!isAddMode">Edit Mentor</button>
+
+<button (click)="isAddMode = !isAddMode">Toggle Add Mode</button>
+<!-- ngIf -->
+
+<!-- ngFor -->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <!-- <th>Date</th> -->
+        <th>Amount</th>
+    </tr>
+    <!-- <tr>
+        <td>Vyom</td>
+        <td>22</td>
+    </tr> -->
+    <!-- <tr *ngFor="let item of userList">
+        <td>{{item.name | slice: 2: 4}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item?.date | date: 'M/d/yy'}}</td>
+        <td>{{item?.amount | currency:'CAD':'code':'3.0-0'}}</td>
+        <td>{{item?.amount | percent}}</td>
+    </tr> -->
+
+    <tr *ngFor="let item of userList">
+        <td>{{item.name | initials}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item?.amount | currencyFormat: 'INR'}}</td>
+        <td (click)="onDetail(item)">View Details</td>
+    </tr>
+</table>
+
+<!-- ngSwitchCase -->
+<!-- <div [ngSwitch]="name">
+    <div *ngSwitchCase="'vyom'">Name is Vyom</div>
+    <div *ngSwitchCase="'pratik'">Name is PRatik</div>
+    <div *ngSwitchCase="'user'">Name is User</div>
+    <div *ngSwitchDefault>Default Case</div>
+</div> -->
+<!-- ngSwitchCase -->
+
+<!-- <div>
+    {{object | json}}
+</div> -->
