@@ -5,13 +5,18 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomersComponent } from './customers.component';
 
 const routes: Routes = [
+  {
+      path:'',
+      pathMatch:'full',
+      redirectTo:'list'
+  },
   { 
     path: '', 
     component: CustomersComponent,
     
     children:[
       {
-        path:'cust-list',
+        path:'list',
         component:CustomerListComponent
       },
       {

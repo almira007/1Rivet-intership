@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerListComponent implements OnInit {
 
   customer:any=[];
-  constructor() {
+  constructor(private router:Router) {
     this.customer=[
       {
         id:1,
@@ -36,4 +37,8 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // public edit(){
+  //   this.router.navigate(['/edit'], { queryParams: { this.customer} });  
+
+  // }
 }
