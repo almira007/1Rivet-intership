@@ -29,7 +29,7 @@ export class CustomerFormComponent implements OnInit {
  
   public Save(){
     this.router.navigate(['customers','list']);
-    this.router.navigate(['/Save'], { queryParams: { message: 'hello' } });  
+    // this.router.navigate(['/Save'], { queryParams: { message: 'hello' } });  
 
   }
 

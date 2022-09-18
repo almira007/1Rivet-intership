@@ -20,7 +20,7 @@
                 <td>{{mypro.id}}</td>
                 <td>{{mypro.Email}}</td>
                 <td>{{mypro.Password}}</td>
-                <td><button class="btn btn-outline-success" type="submit" [routerLink]="['../','edit',mypro.id]"   [queryParams]="{ Email: mypro.Email}">Edit</button></td>
+                <td><button class="btn btn-outline-success" type="submit" [routerLink]="['../','edit',mypro.id]"   [queryParams]="{ Email: mypro.Email,Id:mypro.id}">Edit</button></td>
             </tr>
         </tbody>
     </table>

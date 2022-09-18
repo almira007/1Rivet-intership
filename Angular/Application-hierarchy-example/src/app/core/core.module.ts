@@ -9,6 +9,7 @@ import { AboutComponent } from './component/about/about.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 // import { AppModule } from '../app.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppRoutingModule } from '../app-routing.module';
             SidbarComponent,
             FooterComponent,
             AboutComponent,
-            PageNotFoundComponent
+            PageNotFoundComponent,
+            SignUpComponent
   ],
   imports: [
     CommonModule,
