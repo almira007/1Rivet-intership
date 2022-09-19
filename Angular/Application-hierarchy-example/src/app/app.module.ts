@@ -8,14 +8,12 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { UserFormComponent } from './user-form/user-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UserFormComponent,
-    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +21,6 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     CoreModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
   ],
   exports:[
     // AppRoutingModule
