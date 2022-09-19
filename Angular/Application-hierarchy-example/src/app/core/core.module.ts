@@ -23,7 +23,7 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
   ],
   imports: [
     CommonModule,
-   AppRoutingModule
+    AppRoutingModule
     
   ],
   exports:[

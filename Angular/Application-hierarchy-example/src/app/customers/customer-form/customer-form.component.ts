@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { User } from 'src/app/users.model';
 
 @Component({
   selector: 'app-customer-form',
@@ -8,6 +10,9 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class CustomerFormComponent implements OnInit {
 
+  @ViewChild ('userForm') userForm!:NgForm;
+  public user:User;
+  public isSubmitted:boolean;
   public title:string;
   public customerid:number;
   // public btn:string;
@@ -18,7 +23,10 @@ export class CustomerFormComponent implements OnInit {
        this.customerid=this.activaterouter.snapshot.params['customerid'];
        this.title='Add Customer';
        this.title=this.customerid? 'Edit Customer' : 'Add Customer';
-      //  this.btn=this.customerid? 'Edit':'Add';
+
+      //Template driven form data
+      this.user = new User();
+      this.isSubmitted=false;
 
   }
 
@@ -27,10 +35,16 @@ export class CustomerFormComponent implements OnInit {
     console.log(this.activaterouter.snapshot.params['customerid']);
   }
  
-  public Save(){
-    this.router.navigate(['customers','list']);
+  public Submit(){
+    this.router.navigate(['customers']);
+
+    //form data show in console
+    this.isSubmitted=true;
+    console.log(this.userForm.form.value);
+
     // this.router.navigate(['/Save'], { queryParams: { message: 'hello' } });  
 
   }
 
+  
 }
