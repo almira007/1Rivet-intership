@@ -1,0 +1,32 @@
+<div class="d-flex flex-column justify-content-center align-items-center row pt-3">
+    <div class="d-flex  mt-2 ms-3 text-left bg-white rounded shadow py-3">
+        <form [formGroup]="userForm">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" formControlName="firstName">
+                <div *ngIf="formValidation['firstName'].invalid && (formValidation['firstName'].touched || formValidation['firstName'].dirty)">
+                    <div *ngIf="formValidation['firstName'].errors && formValidation['firstName'].errors['required']" class="text-danger">FirstName is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName">
+                <div *ngIf="formValidation['lastName'].invalid && (formValidation['lastName'].touched || formValidation['lastName'].dirty)">
+                    <div *ngIf="formValidation['lastName'].errors && formValidation['lastName'].errors['required']" class="text-danger">LastName is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Contact No</label>
+                <input type="text" class="form-control" formControlName="contactNo">
+                <div *ngIf="formValidation['contactNo'].invalid && (formValidation['contactNo'].touched || formValidation['contactNo'].dirty)">
+                    <div *ngIf="formValidation['contactNo'].errors && formValidation['contactNo'].errors['required']" class="text-danger">ContactNo is required.</div>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button class="btn btn-outline-success" type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+    </div>
+</div>

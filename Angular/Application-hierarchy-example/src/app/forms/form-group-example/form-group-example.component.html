@@ -1,0 +1,92 @@
+<div class="d-flex flex-column justify-content-center align-items-center row pt-3" style="width:800px">
+    <div class="d-flex  mt-2 ms-3 text-left bg-white rounded shadow py-3">
+        <form class="row g-4" [formGroup]="userForm">
+            <div class="col-md-6">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid' : formValidation['firstName'].invalid && (isSubmitted || formValidation['firstName'].touched || formValidation['firstName'].dirty),
+                'is-valid' : formValidation['firstName'].valid && (isSubmitted || formValidation['firstName'].touched || formValidation['firstName'].dirty)}">
+                <div class="invalid-feedback" *ngIf="formValidation['firstName'].invalid && (isSubmitted || formValidation['firstName'].touched || formValidation['firstName'].dirty)">
+                    <div *ngIf="formValidation['firstName'].errors && formValidation['firstName'].errors['required']" class="text-danger">First Name is required.</div>
+                    <div *ngIf="formValidation['firstName'].errors?.['minlength']" class="text-danger">
+                        First Name shold have minimun 5 Characters.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">User Name</label>
+                <input type="text" class="form-control" formControlName="userName" [ngClass]="{'is-invalid' : formValidation['userName'].invalid && (isSubmitted || formValidation['userName'].touched || formValidation['userName'].dirty),
+                'is-valid' : formValidation['userName'].valid && (isSubmitted || formValidation['userName'].touched || formValidation['userName'].dirty)}">
+                <div  class="invalid-feedback" *ngIf="formValidation['userName'].invalid && (isSubmitted || formValidation['userName'].touched || formValidation['userName'].dirty)">
+                    <div *ngIf="formValidation['userName'].errors && formValidation['userName'].errors['required']" class="text-danger">UserName is required.</div>
+                    <div *ngIf="formValidation['userName'].errors?.['maxlength']" class="text-danger">
+                        User Name shold have maximum 5 Characters.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Contact No</label>
+                <input type="text" class="form-control" formControlName="contectNo" [ngClass]="{'is-invalid' : formValidation['contectNo'].invalid && (isSubmitted || formValidation['contectNo'].touched || formValidation['contectNo'].dirty),
+                'is-valid' : formValidation['contectNo'].valid && (isSubmitted || formValidation['contectNo'].touched || formValidation['contectNo'].dirty)}">
+                <div  class="invalid-feedback" *ngIf="formValidation['contectNo'].invalid && (isSubmitted || formValidation['contectNo'].touched || formValidation['contectNo'].dirty)">
+                    <div *ngIf="formValidation['contectNo'].errors?.['pattern']" class="text-danger">Contact No is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Age</label>
+                <input type="number" class="form-control" formControlName="age" [ngClass]="{'is-invalid' : formValidation['age'].invalid && (isSubmitted || formValidation['age'].touched || formValidation['age'].dirty),
+                'is-valid' : formValidation['age'].valid && (isSubmitted || formValidation['age'].touched || formValidation['age'].dirty)}">
+                <div  class="invalid-feedback" *ngIf="formValidation['age'].invalid && (isSubmitted || formValidation['age'].touched || formValidation['age'].dirty)">
+                    <div *ngIf="formValidation['age'].errors && formValidation['age'].errors['required']" ></div>
+                    <div class="text-danger" *ngIf="formValidation['age'].errors?.['required']">
+                        Age is required.
+                    </div>
+                    <div class="text-danger" *ngIf="formValidation['age'].errors?.['min']">
+                        Age is less than 8.
+                    </div>
+                    <div class="text-danger" *ngIf="formValidation['age'].errors?.['max']">
+                        Age is greter than 60.
+                    </div>
+                </div>
+            </div>
+            <div class="form-row d-flex" formGroupName="address">
+                <div class="col-3 mb-3 formControl me-5">
+                    <label for="validationServer03">City</label>
+                    <input type="text" class="form-control"  formControlName="city" placeholder="City">
+                </div>
+                <div class="col-3 mb-3 formControl me-5">
+                    <label for="validationServer04">State</label>
+                    <input type="text" class="form-control" id="validationServer04" formControlName="state" placeholder="State">
+                    <div class="invalid-feedback">
+                        Please provide a valid state.
+                    </div>
+                </div>
+                <div class="col-3 mb-3 formControl">
+                    <label for="validationServer05">Zip</label>
+                    <input type="text" class="form-control" id="validationServer05" formControlName="zipCode" placeholder="Zip">
+                    <div class="invalid-feedback">
+                        Please provide a valid zip.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="terms">
+                    <label class="form-check-label" for="gridCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="text-danger"
+                    *ngIf="formValidation['terms'].invalid && (isSubmitted || formValidation['terms'].touched || formValidation['terms'].dirty)">
+                    <div *ngIf="formValidation['terms'].errors?.['required']">
+                        You must agree before submitting. 
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary me-2"  (click)="saveForm()">Sign in</button>
+                <button type="submit" class="btn btn-primary" (click)="reset()">Reset</button>
+
+            </div>
+        </form>
+    </div>
+</div>

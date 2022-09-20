@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-form-control-example',
   templateUrl: './form-control-example.component.html',
@@ -9,22 +8,25 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 })
 export class FormControlExampleComponent implements OnInit {
 
-  public userForm : FormGroup;
+  public userForm:FormGroup;
+
   constructor() { 
     this.userForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('')
+      firstName:new FormControl('',Validators.required),
+      lastName:new FormControl('',Validators.required),
+      contactNo:new FormControl('',Validators.required)
     });
   }
 
   ngOnInit(): void {
   }
 
-  get formValidation(): { [key: string]: AbstractControl } {
+  get formValidation(): { [key: string]: AbstractControl} {
     return this.userForm.controls;
   }
   
-  public onSubmit(): void {
+  public onSubmit(): void{
     console.log(this.userForm.value);
   }
+  
 }

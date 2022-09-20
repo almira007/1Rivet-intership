@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/component/about/about.component';
 import { PageNotFoundComponent } from './core/component/page-not-found/page-not-found.component';
 import { SignUpComponent } from './core/component/sign-up/sign-up.component';
-import { FormControlExampleComponent } from './form/form-control-example/form-control-example.component';
 import { HomeComponent } from './home/home.component';
 import { NgifComponent } from './shared/component/ngif/ngif.component';
 import { UserFormComponent } from './user-form/user-form.component';
@@ -31,11 +30,10 @@ const routes: Routes = [
      path:'signup',
      component:SignUpComponent
   },
-  {
-    path:'form-control',
-    component:FormControlExampleComponent
-  },
+
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'forms', loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule) },
+  { path: 'pipes', loadChildren: () => import('./pipes/pipes.module').then(m => m.PipesModule) },
   {
     path:'**',
     component:PageNotFoundComponent
