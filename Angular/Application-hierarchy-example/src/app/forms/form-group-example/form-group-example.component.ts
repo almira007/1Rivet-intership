@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,38 +8,44 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 })
 export class FormGroupExampleComponent implements OnInit {
 
+
   public userForm: FormGroup;
   public isSubmitted: boolean;
+  public product: any;
+  private onlyCharecter: string = '^[A-Za-z\s]+$';
+
   constructor(
     private formBuilder: FormBuilder
-  ) { 
-    this.isSubmitted=false;
+  ) {
+    this.product = [];
+    this.isSubmitted = false;
     this.userForm = this.formBuilder.group({
-      firstName: ['',[Validators.required,Validators.minLength(5)]],
-      userName: ['',[Validators.required,Validators.maxLength(5)]],
-      contectNo: ['',[Validators.pattern('^[0-9]*$')]],
-      age: ['',[Validators.required,Validators.min(18), Validators.max(60)]],
-      address: this.formBuilder.group({
-        city: ['', [Validators.required]],
-        state: [''],
-        zipCode: ['']
-      }),
+      firstName: ['', [Validators.required, Validators.minLength(5), Validators.pattern(this.onlyCharecter)]],
+      userName: ['', [Validators.required, Validators.maxLength(5)]],
+      contectNo: ['', [Validators.pattern('^[0-9]*$')]],
+      age: ['', [Validators.required, Validators.min(18), Validators.max(60)]],
+      city: ['', [Validators.required]],
+      state: ['',[Validators.required]],
+      zipCode: ['',[Validators.required]],
       terms: [null, [Validators.required]]
     });
+
 
   }
 
   ngOnInit(): void {
   }
 
-  
-  get formValidation(): { [key: string]: AbstractControl} {
+  get formValidation(): { [key: string]: AbstractControl } {
     return this.userForm.controls;
   }
-  public saveForm(): void{
+
+
+  public saveForm(): void {
     this.isSubmitted = true;
     console.log(this.userForm.value);
   }
+
   public reset(): void {
     this.userForm.reset();
   }

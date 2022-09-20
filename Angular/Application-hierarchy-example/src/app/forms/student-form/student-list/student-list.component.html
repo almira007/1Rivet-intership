@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+         <table class="table" style="width: 300px;">
+             <thead class="bg-white">
+              <tr class="text-black">
+                 <th>Name</th>
+                 <th>Gender</th>
+                  <th>DateofBirth</th>
+                  <th>Price</th>
+                  <th>Description</th>
+                  <th>Action</th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr *ngFor="let item of studentList ">
+                  <td>{{item.Name | titlecase}}</td>
+                  <td>{{item.Gender | uppercase}}</td>
+                  <td>{{item.DateofBirth  | date }}</td>
+                  <td>{{item.Price}}</td>
+                  <td>{{item.Description}}</td>
+                  <td><button type="submit" class="btn btn-primary me-2" (click)="editStudent(item)">Edit</button></td>
+                    <td><button type="submit" class="btn btn-primary me-2" (click)="deleteStudent(item)">Delet</button></td>
+                    <td><button type="submit" class="btn btn-primary me-2" (click)="viewStudent(item)">View</button>
+                  </td>
+              </tr>
+             </tbody>
+          </table>
+      </div>
+    </div>
+ </div>
+ 

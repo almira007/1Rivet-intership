@@ -1,7 +1,6 @@
 <h1>component for parent works!</h1>
 <div class="border border-dark">
-    <app-child [ChildList]="currentItem"(ParentList)="addItems($event)"></app-child>
-
+    <app-child [ChildList]="currentItem" (ParentList)="addItems($event)"></app-child>
 </div>
 <ul>
     <li *ngFor="let items of ChildToparent">{{items}}</li>
