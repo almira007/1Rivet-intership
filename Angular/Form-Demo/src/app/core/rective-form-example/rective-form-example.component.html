@@ -1,0 +1,71 @@
+<div class="d-flex flex-column justify-content-center align-items-center row pt-3">
+    <div class="d-flex  mt-2 ms-3 text-left bg-white rounded shadow py-3">
+        <form [formGroup]="userFormData" >
+            <h4>Reactive Form</h4>
+            <div class="form-group" >
+                <label class="control-label ">First Name:</label>
+                <input type="text" class="form-control" name="firstName" formControlName="firstName" [ngClass]="{'is-invalid' : formValidation['firstName'].invalid && (isSubmitted || formValidation['firstName'].touched || formValidation['firstName'].dirty),
+                'is-valid' : formValidation['firstName'].valid && (isSubmitted || formValidation['firstName'].touched || formValidation['firstName'].dirty)}">
+                <div class="invalid-feedback"
+                    *ngIf="formValidation['firstName'].invalid && (isSubmitted || formValidation['firstName'].touched || formValidation['firstName'].dirty)">
+                    <div *ngIf="formValidation['firstName'].errors && formValidation['firstName'].errors['required']"
+                        class="text-danger">First Name is required.</div>
+                    <div *ngIf="formValidation['firstName'].errors?.['minlength']" class="text-danger">
+                        First Name shold have minimun 5 Characters.
+                    </div>
+                    <div *ngIf="formValidation['firstName'].errors?.['pattern']" class="text-danger">
+                        First Name shold have only Characters.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Last Name:</label>
+                <input type="text" class="form-control" name="lastName" formControlName="lastName" [ngClass]="{'is-invalid' : formValidation['lastName'].invalid && (isSubmitted || formValidation['lastName'].touched || formValidation['lastName'].dirty),
+                'is-valid' : formValidation['lastName'].valid && (isSubmitted || formValidation['lastName'].touched || formValidation['lastName'].dirty)}">
+                <div class="invalid-feedback"
+                    *ngIf="formValidation['lastName'].invalid && (isSubmitted || formValidation['lastName'].touched || formValidation['lastName'].dirty)">
+                    <div *ngIf="formValidation['lastName'].errors && formValidation['lastName'].errors['required']"
+                        class="text-danger">First Name is required.</div>
+                    <div *ngIf="formValidation['lastName'].errors?.['maxLength']" class="text-danger">
+                        First Name shold have minimun 5 Characters.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Contect No:</label>
+                <input type="text" class="form-control" name="contactNo" formControlName="contactNo" [ngClass]="{'is-invalid' : formValidation['contectNo'].invalid && (isSubmitted || formValidation['contectNo'].touched || formValidation['contectNo'].dirty),
+                'is-valid' : formValidation['contectNo'].valid && (isSubmitted || formValidation['contectNo'].touched || formValidation['contectNo'].dirty)}">
+                <div class="invalid-feedback"
+                    *ngIf="formValidation['contectNo'].invalid && (isSubmitted || formValidation['contectNo'].touched || formValidation['contectNo'].dirty)">
+                    <div *ngIf="formValidation['contectNo'].errors?.['pattern']" class="text-danger">Contact No is
+                        required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Email:</label>
+                <input type="text" class="form-control" name="email" formControlName="email" 
+                [ngClass]="{'is-invalid' : formValidation['email'].invalid && (isSubmitted || formValidation['email'].touched || formValidation['email'].dirty),
+                'is-valid' : formValidation['email'].valid && (isSubmitted || formValidation['email'].touched || formValidation['email'].dirty)}">
+                <div class="invalid-feedback"
+                    *ngIf="formValidation['email'].invalid && (isSubmitted || formValidation['email'].touched || formValidation['email'].dirty)">
+                    <div *ngIf="formValidation['email'].errors?.['pattern']" class="text-danger">Contact No is
+                        required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 ">
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-outline-success me-2" (click)="saveForm()">Submit</button>
+                    <button type="submit" class="btn btn-outline-success" (click)="reset()">Reset</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,28 +1,27 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
-import { FormComponent } from './form/form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { UserDataService } from './services/user-data.service';
+import { TempplateFormComponent } from './tempplate-form/tempplate-form.component';
+import { CoreModule } from './core/core.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
-    FormComponent
+    TempplateFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    CoreModule    
   ],
-  providers: [UserDataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

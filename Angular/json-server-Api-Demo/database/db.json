@@ -1,0 +1,25 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "Almira",
+      "gender": "female",
+      "dob": "25-09-1999",
+      "salary": "12000"
+    },
+    {
+      "id": 2,
+      "name": "Pooja",
+      "gender": "female",
+      "dob": "25-09-1999",
+      "salary": "12000"
+    },
+    {
+      "name": "Test",
+      "gender": "Male",
+      "dob": "2022-08-31",
+      "salary": "55555",
+      "id": 3
+    }
+  ]
+}

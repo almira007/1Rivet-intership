@@ -2,7 +2,7 @@
     <div class="d-flex  mt-2 ms-3 text-left bg-white rounded shadow py-3">
         <div>
             <h3 class="d-flex justify-content-center align-items-center">Api call in Angular</h3>
-            <form class="row g-4 pt-2" #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+            <form class="row g-4 pt-2" #usersForm="ngForm" (ngSubmit)="onSubmit(usersForm)">
                 <div class="col-md-6">
                     <label class="form-label">Name</label>
                     <input type="text" ngModel class="form-control" name="name">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { UserDataService } from '../services/user-data.service';
 
 @Component({
@@ -8,22 +9,25 @@ import { UserDataService } from '../services/user-data.service';
 })
 export class FormComponent implements OnInit {
 
+  // public employeeForm:FormGroup;
+  public employeeData: any;
 
-  users: any;
-  constructor(private userData: UserDataService) {
+  constructor(
+    private employeeServices: UserDataService
+  ) {
 
-    this.userData.users().subscribe((data)=>{
-      this.users = data;
-    });
-   }
-
-  ngOnInit(): void {
   }
 
-  public getUserFormData(data:any): void{
-    // console.log(data);
-    this.userData.saveUsers(data).subscribe((result)=>{
-      console.log(result);
+  ngOnInit(): void {
+
+    this.employeeServices.getEmployee().subscribe((employee: any) => {
+      this.employeeData = employee;
     })
+  }
+
+  public onSubmit(data: any): void {
+    this.employeeServices.addEmployee(data.value).subscribe((response: any) => {
+      console.log(response);
+    });
   }
 }

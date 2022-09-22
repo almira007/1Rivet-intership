@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Employee } from '../form/form.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserDataService {
-  url = ' http://localhost:3000/User';
+  baseurl = ' http://localhost:3000/';
 
   constructor(private http: HttpClient) {
-   }
+  }
 
-   users(){
-    return this.http.get(this.url);
-   }
+  getEmployee() {
+    const url: string = this.baseurl + 'employee';
+    return this.http.get(url);
+  }
 
-   //data push
-   saveUsers(data:any){
-      return this.http.post<any>(this.url,data);
-   }
+  addEmployee(user: Employee) {
+    const url: string = this.baseurl + 'employee';
+    return this.http.post(url, user);
+  }
 }
