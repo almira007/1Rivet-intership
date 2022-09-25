@@ -30,7 +30,8 @@ const routes: Routes = [
     component:CustomerFormComponent
   },
  {
-  path:'add',component:CustomerFormComponent
+  path:'add',
+  component:CustomerFormComponent
  },
   {
     path:':customerid',
