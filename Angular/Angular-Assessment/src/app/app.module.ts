@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { ContactAsComponent } from './contact-as/contact-as.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CrudModule } from './crud/crud.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    CrudModule
   ],
   providers: [],
   bootstrap: [AppComponent]

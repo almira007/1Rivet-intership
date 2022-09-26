@@ -14,6 +14,7 @@ export class CrudFormComponent implements OnInit {
   public EmployeeForm: FormGroup;
   public employeeData: Employee[];
   public isSubmitted: boolean;
+  public id: any;
 
   //only charecter patten
   private onlyCharecter: string = '^[A-Za-z\s]+$';
@@ -37,6 +38,17 @@ export class CrudFormComponent implements OnInit {
       salary: ['', [Validators.required, Validators.pattern(this.onlynumber)]],
     });
     this.employeeData = [];
+
+    // this.id = this.route.snapshot.params['id'];
+    // this.getEmployeeById();
+    // this.getEmployee();
+    this.route.params.subscribe(params => {
+
+      this.id = params['id'];
+      this.getEmployeeById()
+    });
+
+   
   }
 
   ngOnInit(): void {
@@ -52,8 +64,9 @@ export class CrudFormComponent implements OnInit {
   public saveEmployee(): void {
     this.isSubmitted = true;
     if (this.EmployeeForm.valid) {
-      if (this.EmployeeForm.value.id) {
-        this.updateEmployee(this.EmployeeForm.value.id);
+      this.isSubmitted = false;
+      if (this.id) {
+        this.updateEmployee();
       }
       else {
         this.employeeDataService.addEmployee(this.EmployeeForm.value).subscribe(response => {
@@ -78,14 +91,19 @@ export class CrudFormComponent implements OnInit {
     });
   }
 
-  public updateEmployee(id: number): void {
-    this.employeeDataService.updateEmployee(this.EmployeeForm.value, id).subscribe((response) => {
+  public updateEmployee(): void {
+    this.employeeDataService.updateEmployee(this.EmployeeForm.value, this.id).subscribe((response) => {
       this.getEmployee();
     });
   }
 
+  private getEmployeeById(): void {
+    this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee: Employee) => {
+      this.EmployeeForm.patchValue(employee);
+    });
+  }
   public editEmployee(employee: any): void {
-    this.EmployeeForm.patchValue(employee);
+    // this.EmployeeForm.patchValue(employee);
   }
 }
 

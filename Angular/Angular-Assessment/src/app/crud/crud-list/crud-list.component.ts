@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
+
 import { Employee } from 'src/app/employee.model';
 import { EmployeeDataService } from 'src/app/service/employee-data.service';
 
@@ -14,7 +15,7 @@ export class CrudListComponent implements OnInit {
 
   @Output() public edit: EventEmitter<any>;
 
-  constructor(private router: Router, private employeeDataService: EmployeeDataService) {
+  constructor( private router: Router, private employeeDataService: EmployeeDataService,  public activatedRoute: ActivatedRoute,) {
     this.employeeList = [];
     this.edit = new EventEmitter();
   }
@@ -25,7 +26,9 @@ export class CrudListComponent implements OnInit {
 
   //Edit record
   public editEmployee(employee: Employee): void {
-    this.edit.emit(employee);
+    // this.edit.emit(employee);
+    this.router.navigate(['crud/edit/', employee.id]);
+
   }
 
   //getEmployee
