@@ -48,7 +48,7 @@ export class CrudListComponent implements OnInit {
   }
 
   //Details pass the object
-  public detailsEmployee(item: any): void {
-    this.router.navigate(['Employee/employee-details'], { queryParams: item });
+  public detailsEmployee(employee:Employee): void {
+    this.router.navigate(['crud/details',employee.id]);
   }
 }

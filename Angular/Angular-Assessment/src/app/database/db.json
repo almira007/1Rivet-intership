@@ -17,9 +17,16 @@
     {
       "id": 11,
       "name": "Almira",
-      "gender": "male",
-      "dob": "2022-09-14",
-      "salary": "43099090"
+      "gender": "female",
+      "dob": "2022-09-13",
+      "salary": "120000"
+    },
+    {
+      "id": 12,
+      "name": "hemnshi",
+      "gender": "female",
+      "dob": "2022-09-06",
+      "salary": "13000"
     }
   ]
 }

@@ -24,15 +24,18 @@ const routes: Routes = [
         component: CrudDetailsComponent
       },
       {
+          path:'add',
+          component:CrudFormComponent
+      },
+      {
         path: 'edit/:id',
         component: CrudFormComponent
       },
+      {
+        path:'details/:id',
+        component:CrudDetailsComponent
+      }
     ]
-  }
-  ,
-  {
-    path: 'details/employeename',
-    component: CrudFormComponent
   },
   {
     path: 'employeename',
