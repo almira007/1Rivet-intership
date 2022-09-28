@@ -11,6 +11,9 @@ import { CrudModule } from './crud/crud.module';
 import { ObservablesExampleComponent } from './observables-example/observables-example.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SubjectExampleComponent } from './subject-example/subject-example.component';
+import { BehaviorExampleComponent } from './behavior-example/behavior-example.component';
+import { ReplayExampleComponent } from './replay-example/replay-example.component';
+import { AsyncExampleComponent } from './async-example/async-example.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { SubjectExampleComponent } from './subject-example/subject-example.compo
     ContactAsComponent,
     PageNotFoundComponent,
     ObservablesExampleComponent,
-    SubjectExampleComponent
+    SubjectExampleComponent,
+    BehaviorExampleComponent,
+    ReplayExampleComponent,
+    AsyncExampleComponent
   ],
   imports: [
     BrowserModule,
