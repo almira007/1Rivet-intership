@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactAsComponent } from './contact-as/contact-as.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CrudModule } from './crud/crud.module';
+import { ObservablesExampleComponent } from './observables-example/observables-example.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SubjectExampleComponent } from './subject-example/subject-example.component';
 
 
 @NgModule({
@@ -15,13 +18,16 @@ import { CrudModule } from './crud/crud.module';
     AppComponent,
     HomeComponent,
     ContactAsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ObservablesExampleComponent,
+    SubjectExampleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    CrudModule
+    CrudModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

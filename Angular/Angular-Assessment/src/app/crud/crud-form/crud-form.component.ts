@@ -15,7 +15,7 @@ export class CrudFormComponent implements OnInit {
   public employeeData: Employee[];
   public isSubmitted: boolean;
   public id: any;
-  public title: string;
+  public title: any;
 
 
   //only charecter patten
@@ -31,7 +31,9 @@ export class CrudFormComponent implements OnInit {
     private route: ActivatedRoute
 
   ) {
-    this.title = 'Add';
+    // this.id=this.route.snapshot.params['id'];
+    
+
     this.isSubmitted = false;
     this.EmployeeForm = this.fb.group({
       id: [],
@@ -46,9 +48,11 @@ export class CrudFormComponent implements OnInit {
     // this.getEmployeeById();
     // this.getEmployee();
     this.route.params.subscribe(params => {
-
       this.id = params['id'];
-      this.getEmployeeById()
+      if (this.id){
+        this.getEmployeeById()
+      }
+      
     });
 
 
@@ -56,6 +60,11 @@ export class CrudFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmployee();
+
+    //add and edit
+    this.title='Add';
+    this.title=this.id? 'Edit ' : 'Add ';
+
   }
 
   //validation function
@@ -106,9 +115,7 @@ export class CrudFormComponent implements OnInit {
     });
   }
   public editEmployee(employee: Employee): void {
-    this.EmployeeForm.patchValue(employee);
-    this.title = "Edit";
-    console.log(this.EmployeeForm);
+  
   }
 }
 
