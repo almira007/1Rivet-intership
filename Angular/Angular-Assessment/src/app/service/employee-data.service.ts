@@ -37,4 +37,12 @@ export class EmployeeDataService {
     const url:string= this.baseurl + 'employeeData/' + id;
     return this.http.put(url,user);
   }
+
+  //observable
+  print(value:any,contentId:any){
+    let element=document.createElement('li');
+    element.innerText=value
+    document.getElementById(contentId)?.appendChild(element)
+
+  }
 }
