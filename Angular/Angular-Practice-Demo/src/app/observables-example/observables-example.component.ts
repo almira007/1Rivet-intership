@@ -32,7 +32,7 @@ export class ObservablesExampleComponent implements OnInit  ,OnDestroy{
       },3000)
       setTimeout(()=>{
         observer.next('Html And Css');
-       observer.complete();
+        observer.complete();
       
       },4000)
       setTimeout(()=>{

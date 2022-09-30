@@ -3,3 +3,30 @@
     margin: 0;
     padding: 0;
 }
+
+app-mobile,
+app-laptop,
+app-watch,
+app-burger,
+app-ovan{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    margin: 1rem auto;
+    padding: 0px 1rem;
+    height: 50px;
+    width: 400px;
+    font-size: x-large;
+    font-family: cursive;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+// app-mobile:hover,
+// app-laptop:hover,
+// app-watch:hover,
+// app-burger:hover,
+// app-ovan:hover{
+//    background-color: rgba(0, 0, 0, 0.2);
+// }

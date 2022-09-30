@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-12">
                     <button *ngIf="!id" type="submit" class="btn btn-success me-2" (click)="saveEmployee()" [disabled]="EmployeeForm.invalid">Save</button>
-                    <button   *ngIf="id" class="btn btn-success me-2" type="submit">Edit</button>
+                    <button  *ngIf="id" class="btn btn-success me-2" type="submit">Edit</button>
                     <button type="submit" class="btn btn-primary" (click)="resetForm()">Reset</button>
                 </div>
             </form>

@@ -1,0 +1,21 @@
+<div class="d-flex flex-column justify-content-center align-items-center row" style="width: 800px;">
+    <div class="d-flex text-left bg-white rounded shadow ">
+        <div class="w-100">
+            <div class="my-3 container">
+                <h2>Subject</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Ex-1</strong>
+                        <hr>
+                        <ul [ngClass]="status =='complete'? 'complete':status=='error'?'error':''" class="techList"
+                            id="elContainer">
+
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

@@ -45,6 +45,7 @@ const routes: Routes = [
   },
   { path: 'Employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) },
   { path: 'crud', loadChildren: () => import('./crud/crud.module').then(m => m.CrudModule) },
+  { path: 'rxjs-operators', loadChildren: () => import('./rxjs-operators/rxjs-operators.module').then(m => m.RxjsOperatorsModule) },
   {
     path:'**',
     component:PageNotFoundComponent
