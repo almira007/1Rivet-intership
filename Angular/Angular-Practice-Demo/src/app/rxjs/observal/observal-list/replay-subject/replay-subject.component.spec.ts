@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubjectExampleComponent } from './subject-example.component';
+import { ReplaySubjectComponent } from './replay-subject.component';
 
-describe('SubjectExampleComponent', () => {
-  let component: SubjectExampleComponent;
-  let fixture: ComponentFixture<SubjectExampleComponent>;
+describe('ReplaySubjectComponent', () => {
+  let component: ReplaySubjectComponent;
+  let fixture: ComponentFixture<ReplaySubjectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubjectExampleComponent ]
+      declarations: [ ReplaySubjectComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubjectExampleComponent);
+    fixture = TestBed.createComponent(ReplaySubjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

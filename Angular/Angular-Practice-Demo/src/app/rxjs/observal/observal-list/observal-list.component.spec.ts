@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AsyncExampleComponent } from './async-example.component';
+import { ObservalListComponent } from './observal-list.component';
 
-describe('AsyncExampleComponent', () => {
-  let component: AsyncExampleComponent;
-  let fixture: ComponentFixture<AsyncExampleComponent>;
+describe('ObservalListComponent', () => {
+  let component: ObservalListComponent;
+  let fixture: ComponentFixture<ObservalListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AsyncExampleComponent ]
+      declarations: [ ObservalListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AsyncExampleComponent);
+    fixture = TestBed.createComponent(ObservalListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

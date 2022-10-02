@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReplayExampleComponent } from './replay-example.component';
+import { ObservalComponent } from './observal.component';
 
-describe('ReplayExampleComponent', () => {
-  let component: ReplayExampleComponent;
-  let fixture: ComponentFixture<ReplayExampleComponent>;
+describe('ObservalComponent', () => {
+  let component: ObservalComponent;
+  let fixture: ComponentFixture<ObservalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReplayExampleComponent ]
+      declarations: [ ObservalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ReplayExampleComponent);
+    fixture = TestBed.createComponent(ObservalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

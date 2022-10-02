@@ -18,10 +18,22 @@
           <li class="nav-item">
             <a class="nav-link text-black" routerLink='contact-as'>Contact as</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" routerLink='observable'>Observable example</a>
-          </li>
           <li>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown text-black">
+                  <a class="nav-link dropdown-toggle text-black" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Rxjs
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" routerLink="rxjs/Promise">Promise</a></li>
+                    <li><a class="dropdown-item" routerLink="rxjs/observal">Observable</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+        </li>
+          <!-- <li>
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item dropdown text-black">
@@ -54,7 +66,7 @@
                 </li>
               </ul>
             </div>
-        </li>
+        </li> -->
         </ul>
       </div>
     </div>

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { EmployeeDataService } from '../service/employee-data.service';
-
+import { EmployeeDataService } from 'src/app/service/employee-data.service';
 
 @Component({
-  selector: 'app-subject-example',
-  templateUrl: './subject-example.component.html',
-  styleUrls: ['./subject-example.component.scss']
+  selector: 'app-subject',
+  templateUrl: './subject.component.html',
+  styleUrls: ['./subject.component.scss']
 })
-export class SubjectExampleComponent implements OnInit {
+export class SubjectComponent implements OnInit {
 
+  
  // public subject = new Subject();
   // public subject = new BehaviorSubject(0);
   // public subject = new ReplaySubject(2);
@@ -20,7 +20,7 @@ export class SubjectExampleComponent implements OnInit {
   public observer1:any;
   public observer2:any;
   public status:any;
-  constructor(private employeeService: EmployeeDataService) { }
+  constructor(private employeeService:EmployeeDataService) { }
 
   ngOnInit(): void {
     this.observer1 = this.subject.subscribe({
