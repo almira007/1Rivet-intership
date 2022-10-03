@@ -1,20 +1,17 @@
-<div class="d-flex h-100">
-  <!--Start section-->
-  <section class="d-flex flex-column flex-grow-1 bg-light">
-    <!--Start header-->
-    <header class="border border-success d-flex align-items-center justify-content-between w-100">
-      <app-navbar class="w-100"></app-navbar>
-    </header>
-    <!--End header-->
-    <!--Start main-->
-    <main class="flex-grow-1 d-flex  justify-content-center pt-3">
-
-      <div>
-        <router-outlet></router-outlet>
-      </div>
-      <!-- <app-card></app-card> -->
-    </main>
-    <!--End main-->
-  </section>
-  <!--End section-->
-</div>
+<!--Start section-->
+<section class="w-100 bg-light d-flex flex-column h-100">
+  <!--Start header-->
+  <header class="border border-success">
+    <app-navbar class="w-100"></app-navbar>
+  </header>
+  <!--End header-->
+  <!--Start main-->
+  <main class="pt-3 h-100 w-100 h-100 ">
+    <div class="m-3 h-100">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <app-card></app-card> -->
+  </main>
+  <!--End main-->
+</section>
+<!--End section-->
