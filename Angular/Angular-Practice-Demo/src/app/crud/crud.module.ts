@@ -8,7 +8,6 @@ import { CrudListComponent } from './crud-list/crud-list.component';
 import { CrudDetailsComponent } from './crud-details/crud-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyPipePipe } from './currency-pipe/currency-pipe.pipe';
-import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeDataService } from '../service/employee-data.service';
 

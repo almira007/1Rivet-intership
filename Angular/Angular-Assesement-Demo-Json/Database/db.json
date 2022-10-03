@@ -1,0 +1,11 @@
+{
+    "employeeList": [
+      {
+        "id": 1,
+        "name": "shitall",
+        "gender": "female",
+        "dob": "2022-09-02",
+        "salary": "1000000"
+      }
+    ]
+  }
