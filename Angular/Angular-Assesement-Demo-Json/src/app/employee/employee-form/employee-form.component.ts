@@ -12,7 +12,7 @@ import { EmployeeServiceService } from '../service/employee-service.service';
 })
 export class EmployeeFormComponent implements OnInit {
 
-  public EmployeeForm: FormGroup;
+  public employeeForm: FormGroup;
   public employeeData: Employee[];
   public isSubmitted: boolean;
   public id: any;
@@ -31,7 +31,7 @@ export class EmployeeFormComponent implements OnInit {
   ) {
 
     this.isSubmitted = false;
-    this.EmployeeForm = this.fb.group({
+    this.employeeForm = this.fb.group({
       id: [],
       name: ['', [Validators.required, Validators.minLength(3), Validators.pattern(this.onlyCharecter)]],
       gender: ['', [Validators.required, Validators.pattern(this.onlyalphabets)]],
@@ -39,30 +39,63 @@ export class EmployeeFormComponent implements OnInit {
       salary: ['', [Validators.required, Validators.pattern(this.onlynumber)]],
     });
     this.employeeData = [];
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      if (this.id){
+        this.getEmployeeById()
+      }
+      
+    });
   }
 
-  
+
   //validation function
   get formValidation(): { [key: string]: AbstractControl } {
-    return this.EmployeeForm.controls;
+    return this.employeeForm.controls;
   }
-  
+
   ngOnInit(): void {
-    // this.getEmployee();
+    this.getEmployee();
 
   }
-
   public saveEmployee(): void {
     this.isSubmitted = true;
+    if (this.employeeForm.valid) {
+      // this.isSubmitted = false;
+      if(this.id){
+        this.updateEmployee();
+      }
+    }
+    else {
+      this.employeeDataService.addEmployee(this.employeeForm.value).subscribe(response => {
+        this.getEmployee();
+        console.log(response);
+      });
+      // this.isSubmitted = false;
+      this.employeeForm.reset();
+    }
   }
 
   public resetForm(): void {
-    this.EmployeeForm.reset();
+    this.employeeForm.reset();
   }
-  
+
   public getEmployee(): void {
     this.employeeDataService.getEmployee().subscribe((employee: Employee[]) => {
       this.employeeData = employee;
+    });
+  }
+
+  
+  public updateEmployee(): void {
+    this.employeeDataService.updateEmployee(this.employeeForm.value, this.id).subscribe((response) => {
+      this.getEmployee();
+    });
+  }
+
+  public getEmployeeById(): void{
+    this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee: Employee) => {
+      this.employeeForm.patchValue(employee);
     });
   }
 }

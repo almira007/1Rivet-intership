@@ -2,7 +2,7 @@
     <div class="d-flex  mt-2 ms-3 text-left bg-white rounded shadow py-3">
         <div>
             <h3 class="d-flex justify-content-center align-items-center">Add Employee</h3>
-            <form class="row g-4 pt-2" [formGroup]="EmployeeForm">
+            <form class="row g-4 pt-2" [formGroup]="employeeForm">
                 <div class="col-md-6">
                     <label class="form-label">Name</label>
                     <input type="text" class="form-control" formControlName="name"
@@ -64,11 +64,11 @@
                     <button type="button" class="btn btn-primary" (click)="resetForm()">Reset</button>
                 </div>
             </form>
-            <!-- <div class="pt-2">
+            <div class="pt-2">
                 <app-employee-list
                 [employeeList]="employeeData">
                 </app-employee-list>
-            </div> -->
+            </div>
         </div>
     </div>
 

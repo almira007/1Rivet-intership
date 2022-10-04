@@ -28,7 +28,6 @@ export class CrudListComponent implements OnInit {
   public editEmployee(employee: Employee): void {
     // this.edit.emit(employee);
     this.router.navigate(['crud/edit/', employee.id]);
-
   }
 
   //getEmployee

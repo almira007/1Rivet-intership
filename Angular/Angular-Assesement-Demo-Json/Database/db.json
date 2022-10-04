@@ -1,11 +1,32 @@
 {
-    "employeeList": [
-      {
-        "id": 1,
-        "name": "shitall",
-        "gender": "female",
-        "dob": "2022-09-02",
-        "salary": "1000000"
-      }
-    ]
-  }
+  "employeeList": [
+    {
+      "id": 7,
+      "name": "poojaa",
+      "gender": "female",
+      "dob": "2022-10-05",
+      "salary": "12000"
+    },
+    {
+      "id": 8,
+      "name": "hemanshi",
+      "gender": "female",
+      "dob": "2022-10-05",
+      "salary": "30000"
+    },
+    {
+      "id": 9,
+      "name": "almira",
+      "gender": "female",
+      "dob": "2022-10-05",
+      "salary": "20000"
+    },
+    {
+      "id": 10,
+      "name": "almira",
+      "gender": "female",
+      "dob": "2022-10-05",
+      "salary": "20000"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeServiceService } from './service/employee-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipePipe } from './currency-pipe/currency-pipe.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeComponent,
     EmployeeFormComponent,
     EmployeeListComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    CurrencyPipePipe
   ],
   imports: [
     CommonModule,
