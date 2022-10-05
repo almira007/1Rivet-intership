@@ -41,10 +41,10 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeData = [];
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      if (this.id){
+      if (this.id) {
         this.getEmployeeById()
       }
-      
+
     });
   }
 
@@ -61,17 +61,17 @@ export class EmployeeFormComponent implements OnInit {
   public saveEmployee(): void {
     this.isSubmitted = true;
     if (this.employeeForm.valid) {
-      // this.isSubmitted = false;
-      if(this.id){
+      this.isSubmitted = false;
+      if (this.id) {
         this.updateEmployee();
       }
-    }
-    else {
-      this.employeeDataService.addEmployee(this.employeeForm.value).subscribe(response => {
-        this.getEmployee();
-        console.log(response);
-      });
-      // this.isSubmitted = false;
+      else {
+        this.employeeDataService.addEmployee(this.employeeForm.value).subscribe(response => {
+          this.getEmployee();
+          console.log(response);
+        });
+      }
+      this.isSubmitted = false;
       this.employeeForm.reset();
     }
   }
@@ -86,14 +86,14 @@ export class EmployeeFormComponent implements OnInit {
     });
   }
 
-  
+
   public updateEmployee(): void {
     this.employeeDataService.updateEmployee(this.employeeForm.value, this.id).subscribe((response) => {
       this.getEmployee();
     });
   }
 
-  public getEmployeeById(): void{
+  public getEmployeeById(): void {
     this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee: Employee) => {
       this.employeeForm.patchValue(employee);
     });

@@ -30,18 +30,23 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
+  //Edit record
   public editEmployee(employee:Employee): void{
     this.router.navigate(['employee/edit/', employee.id]);
 
 
   }
+  //Delete the record
   public deleteEmployeeData(id:any): void{
     this.employeeDataService.deleteEmployee(id).subscribe((result)=>{
      this.getEmployee();
     });
 
   }
-  public detailsEmployee(): void{
+
+  //Details pass the object
+  public detailsEmployee(employee:Employee): void{
+    this.router.navigate(['employee/details',employee.id]);
 
   }
 }

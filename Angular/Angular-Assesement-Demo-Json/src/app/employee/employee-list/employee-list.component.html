@@ -14,10 +14,10 @@
             <td>{{item.name | titlecase}}</td>
             <td>{{item.gender | uppercase}}</td>
             <td>{{item.dob | date:'mediumDate'}}</td>
-            <td>{{item.salary}}</td>
+            <td>{{item.salary | currencyPipe : 'IND'}}</td>
             <td><button type="submit" class="btn btn-success me-2" (click)="editEmployee(item)">Edit</button></td>
             <td><button type="submit" class="btn btn-danger me-2" (click)="deleteEmployeeData(item.id)">Delete</button></td>
-            <td><button type="submit" class="btn btn-primary me-2" (click)="detailsEmployee()">Details</button>
+            <td><button type="submit" class="btn btn-primary me-2" (click)="detailsEmployee(item)">Details</button>
             </td>
         </tr>
     </tbody>
