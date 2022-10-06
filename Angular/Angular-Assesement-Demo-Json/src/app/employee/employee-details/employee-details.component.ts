@@ -21,7 +21,7 @@ export class EmployeeDetailsComponent implements OnInit {
     this.id ='';
     this.activateroute.params.subscribe(params=>{
       this.id = params['id'];
-      this.getEmployee();
+      this.getEmployeeById();
     })
     
   }
@@ -29,7 +29,7 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getEmployee(): void{
+  public getEmployeeById(): void{
     this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee:Employee)=>{
       this.employeedata = employee;
     })

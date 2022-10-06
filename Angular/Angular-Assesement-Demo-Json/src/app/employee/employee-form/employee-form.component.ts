@@ -47,8 +47,6 @@ export class EmployeeFormComponent implements OnInit {
 
     });
   }
-
-
   //validation function
   get formValidation(): { [key: string]: AbstractControl } {
     return this.employeeForm.controls;
@@ -86,7 +84,6 @@ export class EmployeeFormComponent implements OnInit {
     });
   }
 
-
   public updateEmployee(): void {
     this.employeeDataService.updateEmployee(this.employeeForm.value, this.id).subscribe((response) => {
       this.getEmployee();
@@ -94,7 +91,7 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   public getEmployeeById(): void {
-    this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee: Employee) => {
+    this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee: Employee[]) => {
       this.employeeForm.patchValue(employee);
     });
   }
