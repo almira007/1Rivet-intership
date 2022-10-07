@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../employee.model';
 import { EmployeeServiceService } from '../service/employee-service.service';
+import { ToasterService } from '../service/toaster.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -15,7 +16,10 @@ export class EmployeeListComponent implements OnInit {
   // @Output() public edit: EventEmitter<any>;
 
   constructor(private router:Router,
-    private employeeDataService:EmployeeServiceService) {
+    private employeeDataService:EmployeeServiceService,
+    private notification:ToasterService
+    // private notification:ToasterService
+    ) {
     this.employeeList =[];
     // this.edit = new EventEmitter();
    }
@@ -38,6 +42,8 @@ export class EmployeeListComponent implements OnInit {
   public deleteEmployeeData(id:any): void{
     this.employeeDataService.deleteEmployee(id).subscribe((result)=>{
      this.getEmployee();
+     this.notification.showError("Something is wrong", "Delete record sucessfully")
+
     });
 
   }
@@ -45,5 +51,7 @@ export class EmployeeListComponent implements OnInit {
   //Details pass the object
   public detailsEmployee(employee:Employee): void{
     this.router.navigate(['employee/details',employee.id]);
+    this.notification.showInfo("This is info", "Details of data")
+
   }
 }

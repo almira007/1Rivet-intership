@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeServiceService } from './service/employee-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipePipe } from './currency-pipe/currency-pipe.pipe';
+import { ToasterService } from './service/toaster.service';
 
 
 @NgModule({
@@ -24,8 +25,11 @@ import { CurrencyPipePipe } from './currency-pipe/currency-pipe.pipe';
     CommonModule,
     EmployeeRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers:[EmployeeServiceService]
+  providers:[
+    EmployeeServiceService,
+    ToasterService
+  ]
 })
 export class EmployeeModule { }

@@ -1,4 +1,23 @@
-<p>creation-observables works!</p>
-<button type="button" class="btn btn-success">Success</button>
+<div class="d-flex flex-column justify-content-center align-items-center row mx-auto" style="width: 800px;">
+    <div class="d-flex text-left bg-white rounded shadow ">
+        <div class="w-100">
+            <div class="my-3 container">
+                <h2>Creation Observables</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Ex-1</strong>
+                        <hr>
+                        <ul [ngClass]="status =='complete'? 'complete':status=='error'?'error':''" class="techList"
+                            id="creation">
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <button type="button" class="btn btn-success mb-4">Success</button>
+        </div>
+    </div>
+</div>
 
 

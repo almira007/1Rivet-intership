@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { concat, forkJoin, interval, map, merge, of, take, timeInterval, timer } from 'rxjs';
+import { EmployeeDataService } from 'src/app/service/employee-data.service';
 import { __values } from 'tslib';
 
 @Component({
@@ -9,17 +10,24 @@ import { __values } from 'tslib';
 })
 export class CombinationJoinOperatorsComponent implements OnInit {
 
+  public status: any;
 
-  constructor() { }
+  constructor(private employeedata:EmployeeDataService) { }
 
   ngOnInit(): void {
     //Concat
 
-    // let list1 = of(2, 4, 6, 8, 10, 12, 14, 16, 18, 20);
-    // let list2 = of(1, 3, 5, 7, 9, 11, 13, 15, 17, 19);
-    // concat(list1, list2).subscribe((data) => {
-    //   console.log(data)
-    // })
+    let list1 = of(2, 4, 6, 8, 10, 12, 14, 16, 18, 20);
+    let list2 = of(1, 3, 5, 7, 9, 11, 13, 15, 17, 19);
+    concat(list1, list2).subscribe({
+     next:(data)=>{
+      this.employeedata.print(data,'combination');
+     },
+     error:()=>{
+      
+     }
+      // console.log(data)
+    })
 
     // Merge
 
@@ -34,15 +42,16 @@ export class CombinationJoinOperatorsComponent implements OnInit {
 
 
    // ForkJoin
-    const observable = forkJoin({
-      foo : of(1,2,3,4),
-      bar : Promise.resolve(8),
-      baz : timer(5000)
-    });
-    observable.subscribe({
-      next: value => console.log(value),
-      complete: () => console.log('comepele')
-    });
+    // const observable = forkJoin({
+    //   foo : of(1,2,3,4),
+    //   bar : Promise.resolve(8),
+    //   baz : timer(5000)
+    // });
+    // observable.subscribe({
+    //   next: value => 
+    //   console.log(value),
+    //   complete: () => console.log('comepele')
+    // });
   }
 
 }

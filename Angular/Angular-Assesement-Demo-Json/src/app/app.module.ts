@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CoreModule } from './core/core.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,14 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
-  ],
+    CoreModule,
+    ToastrModule.forRoot({
+      timeOut: 15000,
+      closeButton: true,
+      progressBar:true
+    }),
+    BrowserAnimationsModule
+ ],
   providers: [],
   bootstrap: [AppComponent]
 })

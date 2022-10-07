@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from 'src/app/employee/employee.model';
 import { EmployeeServiceService } from '../service/employee-service.service';
+import { ToasterService } from '../service/toaster.service';
 
 
 @Component({
@@ -25,9 +26,11 @@ export class EmployeeFormComponent implements OnInit {
   //only number patten
   private onlynumber: string = '^[0-9]*$';
   constructor(
+    private notification:ToasterService,
     private fb: FormBuilder,
     private employeeDataService: EmployeeServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+ 
   ) {
 
     this.isSubmitted = false;
@@ -66,6 +69,7 @@ export class EmployeeFormComponent implements OnInit {
       else {
         this.employeeDataService.addEmployee(this.employeeForm.value).subscribe(response => {
           this.getEmployee();
+          this.notification.showSuccess("Data shown successfully !!", "Data Add sucessfully")
           console.log(response);
         });
       }
