@@ -13,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
 
   @Input() public employeeList: Employee[];
 
-  // @Output() public edit: EventEmitter<any>;
+  @Output() public edit: EventEmitter<any>;
 
   constructor(private router:Router,
     private employeeDataService:EmployeeServiceService,
@@ -21,10 +21,11 @@ export class EmployeeListComponent implements OnInit {
     // private notification:ToasterService
     ) {
     this.employeeList =[];
-    // this.edit = new EventEmitter();
+    this.edit = new EventEmitter();
    }
 
   ngOnInit(): void {
+    this.getEmployee();
   }
 
   //getEmployee
@@ -36,7 +37,9 @@ export class EmployeeListComponent implements OnInit {
 
   //Edit record
   public editEmployee(employee:Employee): void{
-    this.router.navigate(['employee/edit/', employee.id]);
+    // this.router.navigate(['employee/edit/', employee.id]);
+    this.edit.emit(employee)
+
   }
   //Delete the record
   public deleteEmployeeData(id:any): void{

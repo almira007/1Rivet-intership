@@ -22,14 +22,14 @@ export class EmployeeServiceService {
     return this.http.get(url);
   }
   
-  getEmployee(): Observable<any>{
+  getEmployee(): Observable<Employee[]>{
     const url:string = this.baseurl + 'employeeList';
-    return this.http.get(url);
+    return this.http.get<Employee[]>(url);
   }
 
-  addEmployee(user:Employee): Observable<any>{
+  addEmployee(user:Employee): Observable<Employee>{
     const url:string = this.baseurl + 'employeeList';
-    return this.http.post(url,user);
+    return this.http.post<Employee>(url,user);
   }
 
   deleteEmployee(id:number): Observable<any>{

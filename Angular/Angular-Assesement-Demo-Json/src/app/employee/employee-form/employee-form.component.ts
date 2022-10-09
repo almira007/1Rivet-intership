@@ -56,7 +56,7 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getEmployee();
+    // this.getEmployee();
 
   }
   public saveEmployee(): void {
@@ -68,7 +68,7 @@ export class EmployeeFormComponent implements OnInit {
       }
       else {
         this.employeeDataService.addEmployee(this.employeeForm.value).subscribe(response => {
-          this.getEmployee();
+          // this.getEmployee();
           this.notification.showSuccess("Data shown successfully !!", "Data Add sucessfully")
           console.log(response);
         });
@@ -82,15 +82,15 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeForm.reset();
   }
 
-  public getEmployee(): void {
-    this.employeeDataService.getEmployee().subscribe((employee: Employee[]) => {
-      this.employeeData = employee;
-    });
-  }
+  // public getEmployee(): void {
+  //   this.employeeDataService.getEmployee().subscribe((employee: Employee[]) => {
+  //     this.employeeData = employee;
+  //   });
+  // }
 
   public updateEmployee(): void {
     this.employeeDataService.updateEmployee(this.employeeForm.value, this.id).subscribe((response) => {
-      this.getEmployee();
+      // this.getEmployee();
     });
   }
 
