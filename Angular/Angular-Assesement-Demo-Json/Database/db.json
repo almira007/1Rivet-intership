@@ -8,22 +8,15 @@
       "salary": "20000"
     },
     {
-      "id": 14,
-      "name": "jigs",
-      "gender": "male",
-      "dob": "2022-10-05",
-      "salary": "12000"
-    },
-    {
       "id": 15,
-      "name": "charvi",
+      "name": "charviss",
       "gender": "female",
       "dob": "2022-10-04",
       "salary": "29000"
     },
     {
       "id": 16,
-      "name": "bhargav",
+      "name": "bhargavss",
       "gender": "male",
       "dob": "2022-10-04",
       "salary": "700000"
@@ -48,6 +41,27 @@
       "gender": "female",
       "dob": "2022-10-05",
       "salary": "300000"
+    },
+    {
+      "id": 20,
+      "name": "jinal",
+      "gender": "f",
+      "dob": "2022-10-13",
+      "salary": "13242"
+    },
+    {
+      "id": 21,
+      "name": "ssdds",
+      "gender": "dsdsds",
+      "dob": "2022-10-06",
+      "salary": "2122"
+    },
+    {
+      "id": 22,
+      "name": "saxsxz",
+      "gender": "sddczxc",
+      "dob": "2022-10-11",
+      "salary": "33"
     }
   ]
 }

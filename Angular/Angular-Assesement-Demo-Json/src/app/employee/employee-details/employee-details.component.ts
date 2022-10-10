@@ -11,26 +11,23 @@ import { EmployeeServiceService } from '../service/employee-service.service';
 export class EmployeeDetailsComponent implements OnInit {
 
   public employeedata: Employee;
-  public id:string;
+  public id: string;
   constructor(
     private employeeDataService: EmployeeServiceService,
-    private activateroute:ActivatedRoute
-  ) { 
+    private activateroute: ActivatedRoute
+  ) {
 
     this.employeedata = new Employee();
-    this.id ='';
-    this.activateroute.params.subscribe(params=>{
+    this.id = '';
+    this.activateroute.params.subscribe(params => {
       this.id = params['id'];
-      this.getEmployeeById();
+      this.getEmployee();
     })
-    
   }
-
   ngOnInit(): void {
   }
-
-  public getEmployeeById(): void{
-    this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee:Employee)=>{
+  public getEmployee(): void {
+    this.employeeDataService.getEmployeeById(Number(this.id)).subscribe((employee: Employee) => {
       this.employeedata = employee;
     })
   }

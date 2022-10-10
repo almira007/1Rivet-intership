@@ -11,8 +11,13 @@ import { ToasterService } from '../service/toaster.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  @Input() public employeeList: Employee[];
+  public employeeList: Employee[];
 
+  @Input() public set updateRecord(value:Employee){
+    if(value){
+        
+    }
+  };
   @Output() public edit: EventEmitter<any>;
 
   constructor(private router:Router,
@@ -29,7 +34,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   //getEmployee
-  getEmployee() {
+   getEmployee() {
     this.employeeDataService.getEmployee().subscribe((result) => {
       this.employeeList = result;
     });
@@ -37,24 +42,21 @@ export class EmployeeListComponent implements OnInit {
 
   //Edit record
   public editEmployee(employee:Employee): void{
-    // this.router.navigate(['employee/edit/', employee.id]);
+    this.router.navigate(['employee/edit/', employee.id]);
     this.edit.emit(employee)
-
   }
+
   //Delete the record
   public deleteEmployeeData(id:any): void{
     this.employeeDataService.deleteEmployee(id).subscribe((result)=>{
      this.getEmployee();
      this.notification.showError("Something is wrong", "Delete record sucessfully")
-
     });
-
   }
 
   //Details pass the object
   public detailsEmployee(employee:Employee): void{
     this.router.navigate(['employee/details',employee.id]);
     this.notification.showInfo("This is info", "Details of data")
-
   }
 }

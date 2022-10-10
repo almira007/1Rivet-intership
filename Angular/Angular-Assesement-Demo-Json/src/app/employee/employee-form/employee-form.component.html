@@ -65,8 +65,10 @@
             </form>
             <div class="pt-2">
                 <app-employee-list
-                [employeeList]="employeeData">
+                [updateRecord]="updateEmployees"
+                (edit)="editEmployee($event)">
                 </app-employee-list>
+                <!-- [employeeList]="employeeData", -->
             </div>
         </div>
     </div>

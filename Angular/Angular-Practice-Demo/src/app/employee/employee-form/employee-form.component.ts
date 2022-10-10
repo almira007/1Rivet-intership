@@ -31,7 +31,20 @@ export class EmployeeFormComponent implements OnInit {
       dob: ['', [Validators.required]],
       salary: ['', [Validators.required, Validators.pattern(this.onlynumber)]]
     });
-    this.employeeData = [];
+    this.employeeData = [
+      {
+        name:'Almira',
+        gender: 'Female',
+        dob: '09-09-2022',
+        salary: '12000'
+      },
+      {
+        name:'charvi',
+        gender: 'Female',
+        dob: '12-08-2022',
+        salary: '12000'
+      }
+    ];
   }
 
   ngOnInit(): void {

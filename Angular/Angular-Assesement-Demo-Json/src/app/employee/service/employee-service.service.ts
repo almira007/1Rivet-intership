@@ -11,35 +11,33 @@ export class EmployeeServiceService {
   public baseurl: any;
 
   constructor(
-    private http: HttpClient
-   
-    ) {
+    private http: HttpClient) {
     this.baseurl = "http://localhost:3000/";
   }
 
-  getEmployeeById(id:number): Observable<any>{
-    const url:string = this.baseurl + 'employeeList/' + id;
-    return this.http.get(url);
+  getEmployeeById(id: number): Observable<Employee> {
+    const url: string = this.baseurl + 'employeeList/' + id;
+    return this.http.get<Employee>(url);
   }
-  
-  getEmployee(): Observable<Employee[]>{
-    const url:string = this.baseurl + 'employeeList';
+
+  getEmployee(): Observable<Employee[]> {
+    const url: string = this.baseurl + 'employeeList';
     return this.http.get<Employee[]>(url);
   }
 
-  addEmployee(user:Employee): Observable<Employee>{
-    const url:string = this.baseurl + 'employeeList';
-    return this.http.post<Employee>(url,user);
+  postEmployee(user: Employee): Observable<Employee> {
+    const url: string = this.baseurl + 'employeeList';
+    return this.http.post<Employee>(url, user);
   }
 
-  deleteEmployee(id:number): Observable<any>{
-    const url:string = this.baseurl + 'employeeList/' + id;
-    return this.http.delete(url);
+  deleteEmployee(id: number): Observable<Employee> {
+    const url: string = this.baseurl + 'employeeList/' + id;
+    return this.http.delete<Employee>(url);
   }
 
-  updateEmployee(user:Employee,id:number): Observable<any>{
-    const url:string = this.baseurl + 'employeeList/' + id;
-    return this.http.put(url,user);
+  updateEmployee(employee: Employee, id: number): Observable<Employee> {
+    const url: string = this.baseurl + 'employeeList/' + id;
+    return this.http.put<Employee>(url, employee);
   }
 
 }
