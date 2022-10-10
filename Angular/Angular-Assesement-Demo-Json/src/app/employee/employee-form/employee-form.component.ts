@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Value } from 'sass';
 import { Employee } from 'src/app/employee/employee.model';
 import { EmployeeServiceService } from '../service/employee-service.service';
 import { ToasterService } from '../service/toaster.service';
@@ -13,7 +14,8 @@ import { ToasterService } from '../service/toaster.service';
 })
 export class EmployeeFormComponent implements OnInit {
 
-  public updateEmployees: Employee[];
+  public add!: Employee;
+  public update!: Employee;
   public employeeForm: FormGroup;
   public employeeData: Employee[];
   public isSubmitted: boolean;
@@ -26,6 +28,7 @@ export class EmployeeFormComponent implements OnInit {
   private onlyalphabets: string = '^[a-zA-Z \-\']+';
   //only number patten
   private onlynumber: string = '^[0-9]*$';
+
   constructor(
     private notification: ToasterService,
     private fb: FormBuilder,
@@ -42,7 +45,7 @@ export class EmployeeFormComponent implements OnInit {
       salary: ['', [Validators.required, Validators.pattern(this.onlynumber)]],
     });
     this.employeeData = [];
-    this.updateEmployees=[];
+    // this.updateEmployees=[];
     this.route.params.subscribe(params => {
       this.id = params['id'];
       console.log(this.id);
@@ -63,18 +66,13 @@ export class EmployeeFormComponent implements OnInit {
     this.isSubmitted = true;
     if (this.employeeForm.valid) {
       this.isSubmitted = false;
-      if (this.id) {
+      if (this.employeeForm.value.id) {
         this.updateEmployee();
       }
       else {
-        this.employeeDataService.postEmployee(this.employeeForm.value).subscribe(response => {
-          this.notification.showSuccess("Data shown successfully !!", "Data Add sucessfully")
-          console.log(response);
-        });
-        // this.getEmployee()
+        this.addEmployee();
       }
-      // this.isSubmitted = false;
-      // this.employeeForm.reset();
+      this.resetForm();
     }
   }
 
@@ -83,23 +81,21 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeForm.reset();
   }
 
-  // public getEmployee(): void {
-  //   this.employeeDataService.getEmployee().subscribe((employee) => {
-  //     this.employeeData = employee;
-  //   });
-  // }
+  public addEmployee(): void {
+    this.employeeDataService.addEmployee(this.employeeForm.value).subscribe(response => {
+      this.notification.showSuccess("Data shown successfully !!", "Data Add sucessfully");
+      this.add = response
+    });
+  }
 
   public updateEmployee(): void {
-    this.employeeDataService.updateEmployee(this.employeeForm.value, this.id).subscribe((response) => {
-      // this.getEmployee();
-      console.log(response);
-      
+    this.employeeDataService.updateEmployee(this.employeeForm.value, this.employeeForm.value.id).subscribe((response) => {
+      this.update = response;
     });
   }
 
   //edit record
   public editEmployee(employee: Employee) {
-    this.employeeForm.patchValue(employee)
-    console.log(employee);
+    this.employeeForm.patchValue(employee);
   }
 }
