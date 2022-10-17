@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../employee.model';
+import { EmployeeDetailsService } from '../service/employee-details.service';
 import { EmployeeServiceService } from '../service/employee-service.service';
 import { ToasterService } from '../service/toaster.service';
 
@@ -37,7 +38,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(private router: Router,
     private employeeDataService: EmployeeServiceService,
-    private notification: ToasterService
+    private notification: ToasterService,
+    private employeeDetailsService: EmployeeDetailsService
   ) {
     this.employeeList = [];
     this.edit = new EventEmitter();
@@ -70,7 +72,8 @@ export class EmployeeListComponent implements OnInit {
 
   //Details pass the object
   public detailsEmployee(employee: Employee): void {
-    this.router.navigate(['employee/details', employee.id]);
+    this.employeeDetailsService.employeeDetails.next(employee);
+    this.router.navigate(['employee','details'])
     this.notification.showInfo("This is info", "Details of data")
   }
 }

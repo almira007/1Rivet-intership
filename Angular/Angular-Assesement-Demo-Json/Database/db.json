@@ -2,7 +2,7 @@
   "employeeList": [
     {
       "id": 11,
-      "name": "pooja",
+      "name": "poojaaa",
       "gender": "female",
       "dob": "2022-10-04",
       "salary": "20000"
@@ -51,10 +51,10 @@
     },
     {
       "id": 21,
-      "name": "Newww",
-      "gender": "FF",
+      "name": "newtest",
+      "gender": "f",
       "dob": "2022-10-04",
-      "salary": "8455"
+      "salary": "200000"
     }
   ]
 }

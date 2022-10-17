@@ -11,6 +11,7 @@ import { EmployeeServiceService } from './service/employee-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipePipe } from './currency-pipe/currency-pipe.pipe';
 import { ToasterService } from './service/toaster.service';
+import { EmployeeDetailsService } from './service/employee-details.service';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ToasterService } from './service/toaster.service';
   ],
   providers:[
     EmployeeServiceService,
-    ToasterService
+    ToasterService,
+    EmployeeDetailsService
   ]
 })
 export class EmployeeModule { }

@@ -14,12 +14,7 @@ export class EmployeeServiceService {
     private http: HttpClient) {
     this.baseurl = "http://localhost:3000/";
   }
-
-  getEmployeeById(id: number): Observable<Employee> {
-    const url: string = this.baseurl + 'employeeList/' + id;
-    return this.http.get<Employee>(url);
-  }
-
+  
   getEmployee(): Observable<Employee[]> {
     const url: string = this.baseurl + 'employeeList';
     return this.http.get<Employee[]>(url);
