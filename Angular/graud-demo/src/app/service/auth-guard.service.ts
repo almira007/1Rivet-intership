@@ -19,12 +19,12 @@ export class AuthGuardService {
    * Get list of user data
    * @returns User data
    */
-  public getuserData(): Observable<Users[]>{
+  public getLoginData(): Observable<Users[]>{
     const url: string = this.baseUrl + 'userData';
     return this.http.get<Users[]>(url);
   }
  
-  public adduserData(user: Users): Observable<Users>{
+  public addRegisterData(user: Users): Observable<Users>{
     const url: string = this.baseUrl + 'userData';
     return this.http.post(url,user);
   } 
