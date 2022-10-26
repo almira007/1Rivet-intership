@@ -1,0 +1,52 @@
+{
+  "employee": [
+    {
+      "name": "vishnu",
+      "gender": "male",
+      "dob": "2022-10-13",
+      "salary": "5001",
+      "id": 3
+    }
+  ],
+  "user": [
+    {
+      "firstName": "vishnu",
+      "lastName": "tandel",
+      "username": "vishnu",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "firstName": "zankhu",
+      "lastName": "tandel",
+      "username": "zankhu",
+      "password": "123456",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "firstName": "neha",
+      "lastName": "patel",
+      "username": "4545454555",
+      "password": "123456",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "firstName": "Almira",
+      "lastName": "shaikh",
+      "username": "Almira",
+      "password": "Almira@123",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "firstName": "Hasan",
+      "lastName": "shaikh",
+      "username": "Hasan",
+      "password": "Hasan@123",
+      "role": "user",
+      "id": 5
+    }
+  ]
+}
