@@ -1,0 +1,14 @@
+<!-- Section wrapper: start -->
+<section class="d-flex flex-column h-100">
+  <!-- Header:start -->
+  <header *ngIf="isMenu">
+    <app-header></app-header>
+  </header>
+  <!-- Header:end -->
+  <!-- main wrapper:start -->
+  <main class="flex-grow-1">
+    <router-outlet></router-outlet>
+  </main>
+  <!-- main wrapper:end -->
+</section>
+<!-- Section wrapper: end -->
