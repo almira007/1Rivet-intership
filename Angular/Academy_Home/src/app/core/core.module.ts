@@ -6,6 +6,7 @@ import { LoginComponent } from './autentication/login/login.component';
 import { RegistrationComponent } from './autentication/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -20,10 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
 
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     LoginComponent,
     RegistrationComponent

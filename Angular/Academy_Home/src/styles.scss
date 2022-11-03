@@ -6,6 +6,9 @@
 @import '/node_modules/bootstrap-icons/font/bootstrap-icons';
 
 
+//overlay inbuilt css file
+@import '@angular/cdk/overlay-prebuilt.css';
+
 //base index files
 @import "../src/assets/scss/base/index";
 
@@ -16,14 +19,29 @@
 @import "../src/assets/scss/utilities/index";
 
 /* global */
-*{
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: $font-family-base;
+}
+
+
+// Overlay backdrop styling
+.overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+// Overlay panel styling
+.overlay-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
 }
