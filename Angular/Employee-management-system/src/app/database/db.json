@@ -1,0 +1,28 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "firstName": "Almira",
+      "lastName": "Shaikh",
+      "emailId": "almira@gmail.com",
+      "mobileNo": "5241526341",
+      "salary": "200000"
+    },
+    {
+      "id": 2,
+      "firstName": "sas",
+      "lastName": "saas",
+      "emailId": "asas",
+      "mobileNo": "5422266553",
+      "salary": "22211212"
+    },
+    {
+      "id": 3,
+      "firstName": "dsds",
+      "lastName": "sss",
+      "emailId": "asasas",
+      "mobileNo": "(966) (565)-6565",
+      "salary": "2"
+    }
+  ]
+}

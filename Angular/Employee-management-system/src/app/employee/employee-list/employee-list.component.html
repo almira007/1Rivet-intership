@@ -1,0 +1,30 @@
+<div class="p-2 h-100 navbar-light bg-background pt-2 border p-4 rounded">
+    <section class="d-flex h-100 flex-column pt-2 g-4 py-1 px-2">
+        <div class="d-flex me-2">
+            <h3 class="me-5">Employee List's</h3>
+            <button class="btn btn-outline-success rounded" (click)="openForm()">Add Employee</button>
+        </div>
+        <div class=" mt-3">
+            <table class="table table-success">
+                <thead>
+                    <tr>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">EmailId</th>
+                        <th scope="col">MobileNo</th>
+                        <th scope="col">salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of employeeList">
+                        <td>{{item.firstName}}</td>
+                        <td>{{item.lastName}}</td>
+                        <td>{{item.emailId}}</td>
+                        <td>{{item.mobileNo}}</td>
+                        <td>{{item.salary | dolarToRs:70}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
