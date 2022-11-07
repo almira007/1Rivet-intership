@@ -1,63 +1,65 @@
 <div class="p-2 navbar-light bg-background h-100 pt-2 border p-4 rounded">
     <div class="p-4">
         <div>
-            <form class="row pt-3 border p-4 rounded" style="width: 600px;" [formGroup]="employeeForm">
+            <form class="row pt-3 border  p-4 rounded" style="width: 600px;" [formGroup]="employeeForm">
                 <div class="mb-3 col-12">
-                    <input type="text" class="form-control" formControlName="firstName"
-                        placeholder="Employee FirstName">
-                    <div
-                        *ngIf="employeeForm.controls['firstName'].invalid && (isSubmitted || employeeForm.controls['firstName'].touched || employeeForm.controls['firstName'].dirty)">
-                        <p *ngIf="employeeForm.controls['firstName'].errors?.['required']" class="text-danger">FirstName
-                            is
-                            required</p>
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="Employee FirstName"
+                        [ngClass]="{ 'is-invalid': isSubmitted && formValidation['firstName'].errors }">
+                    <div class="invalid-feedback" *ngIf="isSubmitted && formValidation['firstName'].errors"
+                        class="invalid-feedback">
+                        <div *ngIf="formValidation['firstName'].errors['required']">
+                            First Name is required
+                        </div>
                     </div>
                 </div>
 
                 <div class="mb-3 col-12">
-                    <input type="text" class="form-control" formControlName="lastName" placeholder="Employee LastName">
-                    <div
-                        *ngIf="employeeForm.controls['lastName'].invalid && (isSubmitted || employeeForm.controls['lastName'].touched || employeeForm.controls['lastName'].dirty)">
-                        <p *ngIf="employeeForm.controls['lastName'].errors?.['required']" class="text-danger">LastName
-                            is
-                            required</p>
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Employee LastName"
+                        [ngClass]="{ 'is-invalid': isSubmitted && formValidation['lastName'].errors }">
+                    <div class="invalid-feedback" *ngIf="isSubmitted && formValidation['lastName'].errors"
+                        class="invalid-feedback">
+                        <div *ngIf="formValidation['lastName'].errors['required']">
+                            last Name is required
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3 col-12">
-                    <input type="text" class="form-control" formControlName="emailId" placeholder="Employee EmailId">
-                    <div
-                        *ngIf="employeeForm.controls['emailId'].invalid && (isSubmitted || employeeForm.controls['emailId'].touched || employeeForm.controls['emailId'].dirty)">
-                        <p *ngIf="employeeForm.controls['emailId'].errors?.['required']" class="text-danger">EmailId is
-                            required</p>
+                    <input type="text" class="form-control" formControlName="emailId" placeholder="Employee EmailId"
+                        [ngClass]="{ 'is-invalid': isSubmitted && formValidation['emailId'].errors }">
+                    <div class="invalid-feedback" *ngIf="isSubmitted && formValidation['emailId'].errors"
+                        class="invalid-feedback">
+                        <div *ngIf="formValidation['emailId'].errors['required']">
+                            Email is required
+                        </div>
                     </div>
                 </div>
 
                 <div class="mb-3 col-12">
                     <input type="text" class="form-control" appMaskingNumber formControlName="mobileNo"
-                        placeholder="Employee Mobile No">
-                    <div
-                        *ngIf="employeeForm.controls['mobileNo'].invalid && (isSubmitted || employeeForm.controls['mobileNo'].touched || employeeForm.controls['mobileNo'].dirty)">
-                        <p *ngIf="employeeForm.controls['mobileNo'].errors?.['required']" class="text-danger">MobileNo
-                            is
-                            required</p>
+                        placeholder="Employee Mobile No"
+                        [ngClass]="{ 'is-invalid': isSubmitted && formValidation['mobileNo'].errors }">
+                    <div class="invalid-feedback" *ngIf="isSubmitted && formValidation['mobileNo'].errors"
+                        class="invalid-feedback">
+                        <div *ngIf="formValidation['mobileNo'].errors['required']">
+                            Mobile No is required
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3 col-12">
-                    <input type="text" class="form-control" formControlName="salary" placeholder="Employee Salary">
-                    <div
-                        *ngIf="employeeForm.controls['salary'].invalid && (isSubmitted || employeeForm.controls['salary'].touched || employeeForm.controls['salary'].dirty)">
-                        <p *ngIf="employeeForm.controls['salary'].errors?.['required']" class="text-danger">Salary is
-                            required</p>
+                    <input type="text" class="form-control" formControlName="salary" placeholder="Employee Salary"
+                        [ngClass]="{ 'is-invalid': isSubmitted && formValidation['salary'].errors }">
+                    <div class="invalid-feedback" *ngIf="isSubmitted && formValidation['salary'].errors"
+                        class="invalid-feedback">
+                        <div *ngIf="formValidation['salary'].errors['required']">
+                            Salary is required
+                        </div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <button type="reset" class="btn btn-cancle text-white me-2" (click)="cancleData()">Cancel</button>
+                    <button type="submit" class="btn btn-save text-white" (click)="confirmData()">Save</button>
                 </div>
 
-                <div class="mt-3 d-flex justify-content-between">
-                    <div></div>
-                    <div>
-                        <button type="reset" class="btn btn-cancle text-white me-2"
-                            (click)="cancleData()">Cancel</button>
-                        <button type="submit" class="btn btn-save text-white" (click)="confirmData()">Save</button>
-                    </div>
-                </div>
             </form>
         </div>
     </div>

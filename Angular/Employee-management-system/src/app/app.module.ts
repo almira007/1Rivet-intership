@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     OverlayModule,
     FormsModule,
-
+    InfiniteScrollModule
 
   ],
   providers: [],

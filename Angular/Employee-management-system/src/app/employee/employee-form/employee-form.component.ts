@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmployeeCommunicationService } from '../service/employee-communication.service';
 import { EmployeeService } from '../service/employee.service';
 
 @Component({
@@ -18,17 +19,18 @@ export class EmployeeFormComponent implements OnInit {
   public employeeData: any;
   public isSubmitted: boolean;
   constructor(private fb: FormBuilder,
-    private employeeService: EmployeeService) {
+    private employeeService: EmployeeService,
+    private employeeCommunicationService: EmployeeCommunicationService) {
     this.confirm = new EventEmitter();
     this.cancle = new EventEmitter();
 
     this.employeeForm = this.fb.group({
       id: [],
       firstName: ['', Validators.required],
-      lastName: [''],
-      emailId: [''],
-      mobileNo: [''],
-      salary: [''],
+      lastName: ['', Validators.required],
+      emailId: ['', Validators.required],
+      mobileNo: ['', Validators.required],
+      salary: ['', Validators.required],
     });
     this.employeeData = [];
     this.isSubmitted = false;
@@ -38,38 +40,41 @@ export class EmployeeFormComponent implements OnInit {
     this.getEmployeedata();
   }
 
+  // convenience getter for easy access to form fields
+  get formValidation() { return this.employeeForm.controls; }
+
   public getEmployeedata() {
     this.employeeService.getEmployee().subscribe((data) => {
       this.employeeData = data;
     });
   }
 
-  // public confirmData(): void {
-  //   this.confirm.emit(true);
+  // public confirmData() {
+  //   this.isSubmitted = true;
   //   if (this.employeeForm.valid) {
-  //     if (this.employeeForm.valid) {
-  //       console.log(this.employeeForm.value);
-
+  //     this.isSubmitted = false;
+  //     if (this.employeeForm.value.id) {
+  //       this.updateEmployee();
   //     }
   //     else {
-  //       this.addEmployeeData();
+  //       this.employeeService.addEmployee(this.employeeForm.value).subscribe((result) => {
+  //         console.log(result);
+  //         this.employeeCommunicationService.getDataRefresh(result);
+  //       });
   //       this.getEmployeedata();
   //     }
+  //     this.isSubmitted = false;
   //   }
-
+  //   this.confirm.emit(true)
   // }
-  public confirmData(): void {
-    // this.confirm.emit(true);
+
+  public confirmData() {
+    this.isSubmitted = true;
     if (this.employeeForm.valid) {
-      this.isSubmitted = true;
       this.employeeService.addEmployee(this.employeeForm.value).subscribe((result) => {
         console.log(result);
-        // alert("suucess")
-      });
-      this.getEmployeedata();
-    }
-    else {
-      alert("Plzzz entered the data")
+        this.employeeCommunicationService.getDataRefresh(result);
+      })
     }
   }
 
@@ -78,12 +83,18 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   /**
-   * Add cemployeedata 
+   * Add employee data 
    * return employeeForm value using subject
    */
   public addEmployeeData() {
     this.employeeService.addEmployee(this.employeeForm.value).subscribe((res) => {
+      // this.employeeCommunicationService.getData(res);
+    });
+  }
 
+  //updated record add
+  public updateEmployee(): void {
+    this.employeeService.updateEmployee(this.employeeForm.value).subscribe((response) => {
     });
   }
 }

@@ -1,30 +1,43 @@
 <div class="p-2 h-100 navbar-light bg-background pt-2 border p-4 rounded">
     <section class="d-flex h-100 flex-column pt-2 g-4 py-1 px-2">
-        <div class="d-flex me-2">
+        <div class="d-flex me-2 justify-content-between">
             <h3 class="me-5">Employee List's</h3>
-            <button class="btn btn-outline-success rounded" (click)="openForm()">Add Employee</button>
+            <button class="btn btn-outline-success bg-success text-white rounded" (click)="openForm()">Add
+                Employee</button>
         </div>
         <div class=" mt-3">
-            <table class="table table-success">
-                <thead>
-                    <tr>
-                        <th scope="col">FirstName</th>
-                        <th scope="col">LastName</th>
-                        <th scope="col">EmailId</th>
-                        <th scope="col">MobileNo</th>
-                        <th scope="col">salary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of employeeList">
-                        <td>{{item.firstName}}</td>
-                        <td>{{item.lastName}}</td>
-                        <td>{{item.emailId}}</td>
-                        <td>{{item.mobileNo}}</td>
-                        <td>{{item.salary | dolarToRs:70}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="search-results" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="2"
+                [infiniteScrollThrottle]="0" (scrolled)="onScroll()">
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th scope="col">FirstName</th>
+                            <th scope="col">LastName</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">MobileNo</th>
+                            <th scope="col">salary</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of employeeList index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{item.firstName}}</td>
+                            <td>{{item.lastName}}</td>
+                            <td>{{item.emailId}}</td>
+                            <td>{{item.mobileNo}}</td>
+                            <td>{{item.salary | dolarToRs:70}}</td>
+                            <td>
+                                <div class="d-flex">
+                                    <p (click)="editRecord()"><i class="bi bi-pencil-square text-black me-3"></i></p>
+                                    <p><i class="bi bi-trash text-black"></i></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 </div>

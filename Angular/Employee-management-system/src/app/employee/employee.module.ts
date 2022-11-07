@@ -11,6 +11,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MaskingNumberDirective } from './directory/masking-number.directive';
 import { SharedModule } from '../shared/shared.module';
+import { EmployeeCommunicationService } from './service/employee-communication.service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -28,10 +30,12 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     OverlayModule,
-    SharedModule
+    SharedModule,
+    InfiniteScrollModule
   ],
   providers: [
-    EmployeeService
+    EmployeeService,
+    EmployeeCommunicationService
   ]
 })
 export class EmployeeModule { }
