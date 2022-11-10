@@ -12,6 +12,7 @@ import { User } from '../model/user.model';
 
 const users: User[] = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
 
+
 @Injectable()
 export class FaceBackendInterceptor implements HttpInterceptor {
 
@@ -49,7 +50,7 @@ export class FaceBackendInterceptor implements HttpInterceptor {
         username: user.username,
         firstName: user.firstName,
         lastName: user.lastName,
-        token: 'interceptor'
+        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ1c2VyTmFtZSI6IkFsbWlyYSIsInBhc3N3b3JkIjoiYWxtaXJhQDEyMyIsImVtYWlsIjoiYWxtaXJhQGdtYWlsLmNvbSIsImlhdCI6MTUxNjIzOTAyMn0.pNoZf53Ev_DSAKA1zQVDoebtiYAJImgD_SlVbZ5dDo0',
       })
     }
 
