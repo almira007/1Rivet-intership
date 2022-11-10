@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { EmployeeAdapter } from './employee/adapter/employee.adapter';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     InfiniteScrollModule
 
   ],
-  providers: [],
+  providers: [EmployeeAdapter],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

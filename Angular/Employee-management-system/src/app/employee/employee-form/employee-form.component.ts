@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { EmployeeCommunicationService } from '../service/employee-communication.service';
 import { EmployeeService } from '../service/employee.service';
 
@@ -18,9 +19,15 @@ export class EmployeeFormComponent implements OnInit {
   public employeeForm: FormGroup;
   public employeeData: any;
   public isSubmitted: boolean;
+
+  public isAddMode: boolean;
+  private id!: string;
+
+
   constructor(private fb: FormBuilder,
     private employeeService: EmployeeService,
-    private employeeCommunicationService: EmployeeCommunicationService) {
+    private employeeCommunicationService: EmployeeCommunicationService,
+    private route: ActivatedRoute,) {
     this.confirm = new EventEmitter();
     this.cancle = new EventEmitter();
 
@@ -28,53 +35,46 @@ export class EmployeeFormComponent implements OnInit {
       id: [],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      fullName: [''],
       emailId: ['', Validators.required],
       mobileNo: ['', Validators.required],
       salary: ['', Validators.required],
     });
     this.employeeData = [];
     this.isSubmitted = false;
+    this.isAddMode = true;
+
   }
 
   ngOnInit(): void {
-    this.getEmployeedata();
+    // this.getEmployeedata();
+    this.id = this.route.snapshot.params['id'];
+    this.isAddMode = !this.id;
   }
 
   // convenience getter for easy access to form fields
   get formValidation() { return this.employeeForm.controls; }
 
-  public getEmployeedata() {
-    this.employeeService.getEmployee().subscribe((data) => {
-      this.employeeData = data;
-    });
-  }
-
-  // public confirmData() {
-  //   this.isSubmitted = true;
-  //   if (this.employeeForm.valid) {
-  //     this.isSubmitted = false;
-  //     if (this.employeeForm.value.id) {
-  //       this.updateEmployee();
-  //     }
-  //     else {
-  //       this.employeeService.addEmployee(this.employeeForm.value).subscribe((result) => {
-  //         console.log(result);
-  //         this.employeeCommunicationService.getDataRefresh(result);
-  //       });
-  //       this.getEmployeedata();
-  //     }
-  //     this.isSubmitted = false;
-  //   }
-  //   this.confirm.emit(true)
+  // public getEmployeedata() {
+  //   this.employeeService.getEmployee().subscribe((data) => {
+  //     this.employeeData = data;
+  //   });
   // }
+
 
   public confirmData() {
     this.isSubmitted = true;
     if (this.employeeForm.valid) {
-      this.employeeService.addEmployee(this.employeeForm.value).subscribe((result) => {
-        console.log(result);
-        this.employeeCommunicationService.getDataRefresh(result);
-      })
+      if (this.employeeForm.value.id) {
+        this.updateEmployeeData();
+      }
+      else {
+        this.employeeService.addEmployee(this.employeeForm.value).subscribe((result) => {
+          console.log(result);
+          this.employeeCommunicationService.getDataRefresh(result);
+        });
+        this.confirm.emit(true);
+      }
     }
   }
 
@@ -93,8 +93,9 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   //updated record add
-  public updateEmployee(): void {
+  public updateEmployeeData(): void {
     this.employeeService.updateEmployee(this.employeeForm.value).subscribe((response) => {
+      this.employeeCommunicationService.getDataRefresh(response);
     });
   }
 }

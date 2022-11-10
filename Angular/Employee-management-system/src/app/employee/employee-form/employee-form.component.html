@@ -1,4 +1,6 @@
 <div class="p-2 navbar-light bg-background h-100 pt-2 border p-4 rounded">
+    <h1 *ngIf="isAddMode">Add Employee</h1>
+    <h1 *ngIf="!isAddMode">Edit Employee</h1>
     <div class="p-4">
         <div>
             <form class="row pt-3 border  p-4 rounded" style="width: 600px;" [formGroup]="employeeForm">

@@ -5,4 +5,5 @@ export class Employee {
     public emailId!: string;
     public mobileNo!: string;
     public salary!: number;
+    public fullName!: number;
 }

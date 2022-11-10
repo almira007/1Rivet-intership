@@ -2,6 +2,7 @@ import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConformationComponent } from 'src/app/shared/component/conformation/conformation.component';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
 import { Employee } from '../Model/employee.model';
 import { EmployeeCommunicationService } from '../service/employee-communication.service';
@@ -13,23 +14,12 @@ import { EmployeeService } from '../service/employee.service';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-  photos: any;
-
 
   public employeeList: Employee[]
   private overlayRef!: OverlayRef;
 
-  // Infinite Scroll
-  scrollDistance!: number;
-  scrollUpDistance!: number;
-  throttle!: number;
-  sum: number;
-  start: number;
-  direction = "";
-
-
-
-
+  public scroll: number;
+  public scrollsize: number;
 
   constructor(private employeeService: EmployeeService,
     private router: Router,
@@ -37,27 +27,13 @@ export class EmployeeListComponent implements OnInit {
     private employeeCommunicationService: EmployeeCommunicationService) {
     this.employeeList = [];
 
-    this.throttle = 10;
-    this.scrollDistance = 5;
-    this.scrollUpDistance = 5;
-    this.sum = 20;
-    this.start = 1;
-
+    this.scroll = 1;
+    this.scrollsize = 10;
   }
 
   ngOnInit(): void {
     this.getEmployeedata();
 
-    //add data
-    // this.employeeCommunicationService.addEmployeedata.subscribe((response: Employee) => {
-    //   this.employeeList.push(response);
-    // });
-
-    // this.employeeCommunicationService.addEmployeedata$.subscribe((res) => {
-    //   if (res) {
-    //     this.getEmployeedata();
-    //   }
-    // });
     this.employeeCommunicationService.datapresent.subscribe((result) => {
       console.log(result);
       if (result) {
@@ -67,8 +43,8 @@ export class EmployeeListComponent implements OnInit {
   }
 
   public getEmployeedata() {
-    this.employeeService.getEmployee().subscribe((data) => {
-      this.employeeList = data;
+    this.employeeService.getEmployee(this.scroll, this.scrollsize).subscribe((data) => {
+      this.employeeList = this.employeeList.concat(data);
     });
   }
   public openForm() {
@@ -90,55 +66,50 @@ export class EmployeeListComponent implements OnInit {
     componentRef.instance.cancle.subscribe((res) => {
       this.overlayRef.detach();
     });
+
+    return componentRef;
   }
 
   /**
    * Edit employee data 
    */
-  public editRecord() {
+  public editRecord(item: Employee) {
+    const componentRef = this.openForm();
+    componentRef.instance.employeeForm.patchValue(item);
+  }
+
+  public onScroll() {
+    this.scroll++;
+    this.getEmployeedata();
+  }
+
+  /**
+   * delete the record using overlay
+   */
+  public deleteEmployeeData(item: Employee) {
     // Overlay config
     const overlayConfig: OverlayConfig = new OverlayConfig();
     overlayConfig.positionStrategy = this.overlay.position().global().centerHorizontally().centerVertically();
 
     this.overlayRef = this.overlay.create(overlayConfig);
     // Over Porat;
-    const portal = new ComponentPortal(EmployeeFormComponent);
+    const portal = new ComponentPortal(ConformationComponent);
     // porat attched
     const componentRef = this.overlayRef.attach(portal);
 
+    componentRef.instance.name = item.firstName;
+
     componentRef.instance.confirm.subscribe((res) => {
+      this.employeeService.deleteEmployee(item.id).subscribe((result) => {
+        this.getEmployeedata();
+      });
       this.overlayRef.detach();
     });
 
     componentRef.instance.cancle.subscribe((res) => {
       this.overlayRef.detach();
     });
+
+    return componentRef;
   }
-
-  getPhoto() {
-
-    this.employeeService.getDataScroll('employee', this.sum).subscribe((result: any) => {
-      console.log(result);
-      this.photos = result.photos;
-      this.addItems(this.start, this.sum)
-    },
-      (error) => {
-        console.log(error);
-      })
-
-  }
-
-  addItems(index: any, sum: any) {
-    for (let i = index; i < sum; ++i) {
-      this.employeeList.push(this.photos[i]);
-      console.log(this.employeeList);
-    }
-  }
-
-  onScroll() {
-    // add another 20 items  
-    this.start++
-    this.getEmployeedata();
-  }
-
 }

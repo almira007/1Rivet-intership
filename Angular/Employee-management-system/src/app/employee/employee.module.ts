@@ -13,6 +13,7 @@ import { MaskingNumberDirective } from './directory/masking-number.directive';
 import { SharedModule } from '../shared/shared.module';
 import { EmployeeCommunicationService } from './service/employee-communication.service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { EmployeeAdapter } from './adapter/employee.adapter';
 
 
 
@@ -35,7 +36,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   ],
   providers: [
     EmployeeService,
-    EmployeeCommunicationService
+    EmployeeCommunicationService,
+    EmployeeAdapter
   ]
 })
 export class EmployeeModule { }
