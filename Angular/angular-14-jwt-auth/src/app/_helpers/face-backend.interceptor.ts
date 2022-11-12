@@ -10,7 +10,6 @@ import {
 import { delay, dematerialize, materialize, mergeMap, Observable, of, throwError } from 'rxjs';
 import { User } from '../model/user.model';
 
-const users: User[] = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
 
 
 @Injectable()
@@ -19,63 +18,28 @@ export class FaceBackendInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const { url, method, headers, body } = request;
+    const users = { id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' };
 
-    return of(null)
-      .pipe(mergeMap(handleRoute))
-      .pipe(materialize()) // call materialize and dematerialize to ensure delay even if an error is thrown .
-      .pipe(delay(500))
-      .pipe(dematerialize());
+    // wrap in delayed observable to simulate server api call
+    return of(null).pipe(mergeMap(() => {
 
-    function handleRoute() {
-      switch (true) {
-        case url.endsWith('/users/authenticate') && method === 'POST':
-          return authenticate();
-        case url.endsWith('/users') && method === 'GET':
-          return getUsers();
-        default:
-          // pass through any requests not handled above
-          return next.handle(request);
+      // authenticate
+      if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
+        if (request.body.username === users.username && request.body.password === users.password) {
+          // if login details are valid return user details
+          let body = {
+            id: users.id,
+            username: users.username,
+          };
+          return of(new HttpResponse({ status: 200, body }));
+        } else {
+          // else return 400 bad request
+          return throwError({ error: { message: 'Email ID or password is incorrect' } });
+        }
       }
-    }
-
-    // route functions
-
-    function authenticate() {
-      const { username, password } = body;
-      const user = users.find(x => x.username === username && x.password === password);
-      if (!user) return error('Username or password is incorrect');
-      return ok({
-        id: user.id,
-        username: user.username,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ1c2VyTmFtZSI6IkFsbWlyYSIsInBhc3N3b3JkIjoiYWxtaXJhQDEyMyIsImVtYWlsIjoiYWxtaXJhQGdtYWlsLmNvbSIsImlhdCI6MTUxNjIzOTAyMn0.pNoZf53Ev_DSAKA1zQVDoebtiYAJImgD_SlVbZ5dDo0',
-      })
-    }
-
-    function getUsers() {
-      if (!isLoggedIn()) return unauthorized();
-      return ok(users);
-    }
-
-    // helper functions
-
-    function ok(body?: any) {
-      return of(new HttpResponse({ status: 200, body }))
-    }
-
-    function error(message: any) {
-      return throwError({ error: { message } });
-    }
-
-    function unauthorized() {
-      return throwError({ status: 401, error: { message: 'Unauthorised' } });
-    }
-
-    function isLoggedIn() {
-      return headers.get('Authorization') === 'Bearer fake-jwt-token';
-    }
+      return next.handle(request);
+    })
+    )
   }
 }
 

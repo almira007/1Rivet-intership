@@ -4,5 +4,6 @@ export class User {
     password!: string;
     firstName!: string;
     lastName!: string;
-    token?: string;
+    public tokenId?: any;
+    public expirationTime?:any;
 }

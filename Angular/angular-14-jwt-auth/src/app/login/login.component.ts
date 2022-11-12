@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
+  // returnUrl: string;
   error = '';
 
   constructor(private formBuilder: FormBuilder,
@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthService) {
 
     // redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
-    }
-    this.returnUrl = '';
+    // if (this.authenticationService.currentUserValue) {
+    //   this.router.navigate(['/']);
+    // }
+    // this.returnUrl = '';
 
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
 
@@ -46,18 +46,9 @@ export class LoginComponent implements OnInit {
   public onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
-    if (this.loginForm.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this.authenticationService.login(this.f['username'].value, this.f['password'].value)
-      .pipe(first())
-      .subscribe(
-        (data: any) => {
-          this.router.navigate(['/home']);
-        });
+    this.authenticationService.login(this.loginForm.controls['username'].value, this.loginForm.controls['password'].value).subscribe((data)=>{
+      this.router.navigateByUrl("home");
+    });
   }
 
 }
