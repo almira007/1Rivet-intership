@@ -32,7 +32,7 @@ export class CrudFormComponent implements OnInit {
 
   ) {
     // this.id=this.route.snapshot.params['id'];
-    
+
 
     this.isSubmitted = false;
     this.EmployeeForm = this.fb.group({
@@ -49,10 +49,10 @@ export class CrudFormComponent implements OnInit {
     // this.getEmployee();
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      if (this.id){
+      if (this.id) {
         this.getEmployeeById()
       }
-      
+
     });
 
 
@@ -62,8 +62,8 @@ export class CrudFormComponent implements OnInit {
     this.getEmployee();
 
     //add and edit
-    this.title='Add';
-    this.title=this.id? 'Edit ' : 'Add ';
+    this.title = 'Add';
+    this.title = this.id ? 'Edit ' : 'Add ';
 
   }
 
@@ -115,7 +115,7 @@ export class CrudFormComponent implements OnInit {
     });
   }
   public editEmployee(employee: Employee): void {
-  
+
   }
 }
 

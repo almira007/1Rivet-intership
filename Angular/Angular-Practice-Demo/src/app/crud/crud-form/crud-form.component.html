@@ -36,7 +36,8 @@
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">DOB</label>
-                    <input type="date" class="form-control" formControlName="dob" [ngClass]="{'is-invalid' : formValidation['dob'].invalid && (isSubmitted || formValidation['dob'].touched || formValidation['dob'].dirty),
+                    <input type="date" class="form-control" formControlName="dob"
+                        [ngClass]="{'is-invalid' : formValidation['dob'].invalid && (isSubmitted || formValidation['dob'].touched || formValidation['dob'].dirty),
                     'is-valid' : formValidation['dob'].valid && (isSubmitted || formValidation['dob'].touched || formValidation['dob'].dirty)}">
                     <div class="invalid-feedback"
                         *ngIf="formValidation['dob'].invalid && (isSubmitted || formValidation['dob'].touched || formValidation['dob'].dirty)">
@@ -60,14 +61,14 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <button *ngIf="!id" type="submit" class="btn btn-success me-2" (click)="saveEmployee()" [disabled]="EmployeeForm.invalid">Save</button>
-                    <button  *ngIf="id" class="btn btn-success me-2" type="submit">Edit</button>
+                    <button *ngIf="!id" type="submit" class="btn btn-success me-2" (click)="saveEmployee()"
+                        [disabled]="EmployeeForm.invalid">Save</button>
+                    <button *ngIf="id" class="btn btn-success me-2" type="submit">Edit</button>
                     <button type="submit" class="btn btn-primary" (click)="resetForm()">Reset</button>
                 </div>
             </form>
             <div class="pt-2">
-                <app-crud-list 
-                [employeeList]="employeeData">
+                <app-crud-list [employeeList]="employeeData">
                 </app-crud-list>
             </div>
         </div>

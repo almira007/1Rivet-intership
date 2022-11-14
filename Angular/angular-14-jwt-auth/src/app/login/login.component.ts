@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
     // this.returnUrl = '';
 
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [Validators.required, Validators.maxLength(50)]],
+      password: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(8)]]
     });
   }
 
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   public onSubmit() {
     this.submitted = true;
 
-    this.authenticationService.login(this.loginForm.controls['username'].value, this.loginForm.controls['password'].value).subscribe((data)=>{
+    this.authenticationService.login(this.loginForm.controls['username'].value, this.loginForm.controls['password'].value).subscribe((data) => {
       this.router.navigateByUrl("home");
     });
   }
