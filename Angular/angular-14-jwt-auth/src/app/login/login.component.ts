@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     // this.returnUrl = '';
 
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.maxLength(50)]],
+      username: ['', [Validators.required, Validators.maxLength(50),Validators.pattern(/^[a-zA-Z0-9]+(?:[._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/)]],
       password: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(8)]]
     });
   }
