@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
     // this.returnUrl = '';
 
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.maxLength(50),Validators.pattern(/^[a-zA-Z0-9]+(?:[._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/)]],
-      password: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(8)]]
+      username: ['', [Validators.required, Validators.maxLength(50), Validators.pattern(/^(?=.*?[_.]).*([a-z0-9])+@([a-z\-]{2,}\.)+[a-z\-]{2,4}$/)]],
+      password: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!&/\\\[\](\){\}_])[A-Za-z\d@$!&/\\\[\](\){\}_]{0,}$/)]],
     });
   }
 
