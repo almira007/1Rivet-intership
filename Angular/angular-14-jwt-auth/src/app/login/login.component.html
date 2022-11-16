@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" formControlName="username" class="form-control" placeholder="name@email.com"
-                        [ngClass]="{'is-invalid' : f['username'].invalid && (submitted || f['username'].touched || f['username'].dirty),
+                        [ngClass]="{'is-invalid' : f['username'].invalid && (submitted || f['username'].touched ),
                     'is-valid' : f['username'].valid && (submitted || f['username'].touched || f['username'].dirty)}">
 
                     <div class="invalid-feedback"
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" formControlName="password" class="form-control"
-                        [ngClass]="{'is-invalid' : f['password'].invalid && (submitted || f['password'].touched || f['password'].dirty),
+                        [ngClass]="{'is-invalid' : f['password'].invalid && (submitted || f['password'].touched ),
                     'is-valid' : f['password'].valid && (submitted || f['password'].touched || f['password'].dirty)}" />
 
                     <div *ngIf="f['password'].invalid && (submitted || f['password'].touched || f['password'].dirty)">
@@ -55,10 +55,11 @@
                             Password shold have maximum 30 Characters.
                         </span>
 
-                        <span *ngIf="f['password'].errors?.['minlength'] && ! f['password'].errors?.['pattern']"
+
+                        <!-- <span *ngIf="f['password'].errors?.['minlength'] && ! f['password'].errors?.['pattern']"
                             class="text-danger">
                             Password shold have minimum 8 Characters.
-                        </span>
+                        </span> -->
 
                     </div>
 
