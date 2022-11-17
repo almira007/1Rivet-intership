@@ -18,7 +18,7 @@ export class FaceBackendInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const users = { id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' };
+    const users = { id: 1, username: 'test@gmail.com', password: 'Test@123', firstName: 'Test', lastName: 'User' };
 
     // wrap in delayed observable to simulate server api call
     return of(null).pipe(mergeMap(() => {

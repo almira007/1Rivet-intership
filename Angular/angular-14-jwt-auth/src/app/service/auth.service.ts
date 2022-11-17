@@ -11,15 +11,14 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+
+  /**
+    * loginUrl store
+    * @author Almira shaikh
+    * @description loginUrl in store envirement file
+    * @param 
+    */
   public loginURL = environment.loginUrl;
-  public AUTH_API = environment.AUTH_API;
-
-  // const AUTH_API = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ1c2VybmFtZSI6IkFsbWlyYSIsInBhc3N3b3JkIjoiQWxtaXJhQDEyMyJ9.DE6eiFc3fPCvd7NCULsbZhhXlNRqhhl5fhkq3Hb8x8U';
-
-
-  // const httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  // };
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
@@ -35,32 +34,25 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
-    return this.http.post<User>(`${this.AUTH_API}users/authenticate`, { username, password }).pipe(map((userData: User) => {
-      // userData.expirationTime = new Date((new Date().getTime()) * 60);
-      // userData.tokenId = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ1c2VybmFtZSI6IkFsbWlyYSIsInBhc3N3b3JkIjoiQWxtaXJhQDEyMyJ9.DE6eiFc3fPCvd7NCULsbZhhXlNRqhhl5fhkq3Hb8x8U";
-      // localStorage.setItem('user', JSON.stringify(userData));
-      // this.currentUserSubject.next(userData);
-      return userData;
-    }))
-    // return this.http.post(
-    //   this.AUTH_API + 'signin',
-    //   {
-    //     username,
-    //     password,
-    //   }.pipe(map((userData: User) => {
-
-    //   }))
-    // );
-    // return this.http.post(this.AUTH_API + 'refreshtoken', {}, this.httpOptions);
-
+  /**
+    * login form function 
+    * @author Almira shaikh
+    * @description login form function in post method
+    * @param 
+    */
+  login(user: User): Observable<string> {
+    return this.http.post<string>(this.loginURL, user);
   }
 
+  /**
+    * logout form function 
+    * @author Almira shaikh
+    * @description logout in remove the item in localStrorage
+    * @param 
+    */
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null!);
+    localStorage.removeItem('user');
     this.router.navigateByUrl('login');
-
   }
 }
