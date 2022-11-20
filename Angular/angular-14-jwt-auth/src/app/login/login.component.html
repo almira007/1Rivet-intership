@@ -10,25 +10,25 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" formControlName="username" class="form-control" placeholder="name@email.com"
-                        [ngClass]="{'is-invalid' : f['username'].invalid && (submitted || f['username'].touched ),
-                    'is-valid' : f['username'].valid && (submitted || f['username'].touched || f['username'].dirty)}">
+                    [ngClass]="{'is-invalid': loginForm.controls['username'].invalid && (submitted || loginForm.controls['username'].touched),
+                    'is-valid': loginForm.controls['username'].valid && (submitted || loginForm.controls['username'].touched ||
+                     loginForm.controls['username'].dirty)}">
 
                     <div class="invalid-feedback"
-                        *ngIf="f['username'].invalid && (submitted || f['username'].touched || f['username'].dirty)">
+                    *ngIf="loginForm.controls['username'].invalid && (submitted || loginForm.controls['username'].touched || 
+                    loginForm.controls['username'].dirty)">
 
-                        <span class="text-danger" *ngIf="f['username'].errors?.['required'] ">This field is
-                            required.</span>
+                    <span class="d-flex align-items-start text-danger"
+                    *ngIf="loginForm.controls['username'].errors?.['required']">This field is required</span>
 
-                        <span
-                            *ngIf="f['username'].errors?.['pattern'] && (f['username'].touched || f['username'].pristine)"
-                            class="text-danger">
-                            Please enter valid username.
-                        </span>
+                      <span *ngIf="loginForm.controls['username'].errors?.['pattern'] && (loginForm.controls['username'].touched || 
+                      loginForm.controls['username'].pristine)" class="text-danger">
+                      User does not exist</span>  
+                        
+                      <span *ngIf="loginForm.controls['username'].errors?.['maxlength'] && ! loginForm.controls['username'].errors?.['pattern']">
+                        username shold have maximum 50 Characters
 
-                        <span *ngIf="f['username'].errors?.['maxlength'] && ! f['username'].errors?.['pattern']"
-                            class="text-danger">
-                            username shold have maximum 50 Characters.
-                        </span>
+                      </span>
                     </div>
 
 
@@ -36,28 +36,30 @@
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" formControlName="password" class="form-control"
-                        [ngClass]="{'is-invalid' : f['password'].invalid && (submitted || f['password'].touched ),
-                    'is-valid' : f['password'].valid && (submitted || f['password'].touched || f['password'].dirty)}" />
+                        [ngClass]="{'is-invalid' : loginForm.controls['password'].invalid && (submitted || loginForm.controls['password'].touched ),
+                    'is-valid' : loginForm.controls['password'].valid && (submitted || loginForm.controls['password'].touched || 
+                    loginForm.controls['password'].dirty)}" />
 
-                    <div *ngIf="f['password'].invalid && (submitted || f['password'].touched || f['password'].dirty)">
-                        <span class="text-danger" *ngIf="f['password'].errors?.['required']">
-                            This field is required.
+                    <div *ngIf="loginForm.controls['password'].invalid && (submitted || loginForm.controls['password'].touched || 
+                    loginForm.controls['password'].dirty)">
+                        <span class="text-danger" *ngIf="loginForm.controls['password'].errors?.['required']">
+                            This field is required
                         </span>
 
                         <span
-                            *ngIf="f['password'].errors?.['pattern'] && (f['password'].touched || f['password'].pristine)"
+                            *ngIf="loginForm.controls['password'].errors?.['pattern'] && (loginForm.controls['password'].touched || 
+                            loginForm.controls['password'].pristine)"
                             class="text-danger">
-                            Please enter valid password.
-                        </span>
+                            Please enter valid password                        </span>
 
-                        <span *ngIf="f['password'].errors?.['maxlength'] && ! f['password'].errors?.['pattern']"
+                        <span *ngIf="loginForm.controls['password'].errors?.['maxlength'] && ! loginForm.controls['password'].errors?.['pattern']"
                             class="text-danger">
                             Password shold have maximum 30 Characters.
                         </span>
 
 
 
-                        <span *ngIf="f['password'].errors?.['minlength'] && ! f['password'].errors?.['pattern']"
+                        <span *ngIf="loginForm.controls['password'].errors?.['minlength'] && ! loginForm.controls['password'].errors?.['pattern']"
                             class="text-danger">
                             Password shold have minimum 8 Characters.
                         </span>
