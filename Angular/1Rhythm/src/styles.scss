@@ -2,6 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 
+@import "@ng-select/ng-select/themes/default.theme.css";
+
 @import '../src/assets/scss/base/index';
 @import '../src/assets/scss/vender/index';
 @import '../src/assets/scss/layout/index';

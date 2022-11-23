@@ -1,39 +1,30 @@
 <p>home works!</p>
-<div class="main-container d-flex justify-content-between p-5">
-    <h2 class="col-lg-6 col-sm-12 mb-sm-4 mb-lg-0">All Artists</h2>
-    <div class="d-flex justify-content-end col-lg-6 col-sm-12 mb-sm-4 mb-lg-0">
-        <span class="me-3 select-width1 ">
-            <select class="form-control text-black">
-                <option class="" selected disabled>Instrumental Pl....</option>
-                <option>Surat</option>
-                <option>Bilimora</option>
-                <option>Valsad</option>
-                <option>Navsari</option>
-                <option>Mumbai</option>
-                <option>Pune</option>
-            </select>
+<div class="main-container d-block d-sm-flex justify-content-between px-3">
+    <h2 class="text-nowrap d-flex d-md-block justify-content-center justify-content-lg-start mx-lg-0 ">All Artists
+    </h2>
+    <div class="d-flex justify-content-center justify-content-lg-end ">
+        <span class="me-3 select-width1 icon">
+            <ng-select placeholder="Instrumental Pl.." [clearable]=false>
+                <ng-option>singer</ng-option>
+                <ng-option>Dj</ng-option>
+                <ng-option>instument player</ng-option>
+            </ng-select>
         </span>
         <span class="me-3 select-width2">
-            <select class="form-control">
-                <option selected disabled><span class="text-secondary">City</span></option>
-                <option>Surat</option>
-                <option>Bilimora</option>
-                <option>Valsad</option>
-                <option>Navsari</option>
-                <option>Mumbai</option>
-                <option>Pune</option>
-            </select>
+            <ng-select placeholder="State" [clearable]=false>
+                <ng-option>Gujarat</ng-option>
+                <ng-option>Maharashtra</ng-option>
+            </ng-select>
         </span>
         <span class="select-width2">
-            <select class="form-control">
-                <option class="text-secondary" selected disabled>State</option>
-                <option>Surat</option>
-                <option>Bilimora</option>
-                <option>Valsad</option>
-                <option>Navsari</option>
-                <option>Mumbai</option>
-                <option>Pune</option>
-            </select>
+            <ng-select placeholder="City" [clearable]=false>
+                <ng-option>Bilimora</ng-option>
+                <ng-option>Valsad</ng-option>
+                <ng-option>Surat</ng-option>
+                <ng-option>Mumbai</ng-option>
+                <ng-option>Pune</ng-option>
+            </ng-select>
         </span>
+
     </div>
 </div>

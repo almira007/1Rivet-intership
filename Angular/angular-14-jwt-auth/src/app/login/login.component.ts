@@ -38,20 +38,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-  /**
-     * login form validation function
-     * @author Almira shaikh
-     * @description convenience getter for easy access to form fields
-     * @param 
-     */
-  get f() { return this.loginForm.controls; }
 
   /**
-    * login form onSubmit function 
-    * @author Almira shaikh
-    * @description store the data in localstorage in loginForm
-    * @param 
-    */
+   * Function for onsubmit
+   * @author Almira Shaikh
+   * @description store the data in localstorage in loginForm
+   * @param 
+   */
   public onSubmit() {
     this.submitted = true;
 
