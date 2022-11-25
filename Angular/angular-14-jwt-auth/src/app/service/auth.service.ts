@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   public loginURL = environment.loginUrl;
+  currentUserValue: any;
 
   // private currentUserSubject: BehaviorSubject<User>;
   // public currentUser: Observable<User>;

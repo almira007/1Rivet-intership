@@ -12,7 +12,8 @@
                     <input type="text" formControlName="username" class="form-control" placeholder="name@email.com"
                         [ngClass]="{'is-invalid': loginForm.controls['username'].invalid && (submitted || loginForm.controls['username'].touched),
                     'is-valid': loginForm.controls['username'].valid && (submitted || loginForm.controls['username'].touched ||
-                     loginForm.controls['username'].dirty)}">
+                     loginForm.controls['username'].dirty)}" [(ngModel)]="title" (ngModelChange)="onchange(title)"
+                        maxlength="4">
 
                     <div class="invalid-feedback" *ngIf="loginForm.controls['username'].invalid && (submitted || loginForm.controls['username'].touched || 
                     loginForm.controls['username'].dirty)">
@@ -24,11 +25,11 @@
                       loginForm.controls['username'].pristine)" class="text-danger">
                             User does not exist</span>
 
-                        <span
+                        <!-- <span
                             *ngIf="loginForm.controls['username'].errors?.['maxlength'] && ! loginForm.controls['username'].errors?.['pattern']">
                             username shold have maximum 50 Characters
 
-                        </span>
+                        </span> -->
                     </div>
 
 

@@ -11,6 +11,8 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  title = '';
+  newtitle = '';
 
   loginForm: FormGroup;
   loading = false;
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
      * @param 
      */
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.maxLength(50), Validators.pattern(/^(?=.*?[_.]).*([a-z0-9])+@([a-z\-]{2,}\.)+[a-z\-]{2,4}$/)]],
+      username: ['', [Validators.required, Validators.pattern(/^(?=.*?[_.]).*([a-z0-9])+@([a-z\-]{2,}\.)+[a-z\-]{2,4}$/)]],
       password: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!&/\\\[\](\){\}_])[A-Za-z\d@$!&/\\\[\](\){\}_]{0,}$/)]],
     });
   }
@@ -38,7 +40,11 @@ export class LoginComponent implements OnInit {
 
   }
 
-
+  onchange(title: any) {
+    if (title.length < 50) {
+      // this.newtitle = ;
+    }
+  }
   /**
    * Function for onsubmit
    * @author Almira Shaikh
