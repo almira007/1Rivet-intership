@@ -11,8 +11,6 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  title = '';
-  newtitle = '';
 
   loginForm: FormGroup;
   loading = false;
@@ -38,12 +36,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }
-
-  onchange(title: any) {
-    if (title.length < 50) {
-      // this.newtitle = ;
-    }
   }
   /**
    * Function for onsubmit

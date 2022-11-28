@@ -1,0 +1,26 @@
+<p>booking-history-user works!</p>
+
+<div class="pt-4 px-4">
+    <div class="overflow-auto" style="height:700px ;" infinite-scroll [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="0" [scrollWindow]="false" (scrolled)="onScroll()">
+        <table class="table table-success table-striped">
+            <thead>
+                <tr class="position-sticky top-0">
+                    <th scope="col">Id</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Book On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let items of bookUser index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>
+                        {{items.date | date: 'dd'}}<br>{{items.date | date:'MMM'}}</td>
+                    <td>You booked <b>{{items.name}}</b> For event. </td>
+                    <td>Book On.{{items.bookOn | date:'shortDate'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
