@@ -11,9 +11,9 @@ export class BookingService {
     //this.baseUrl = environment.bookingUrl;
     this.baseUrl = "http://localhost:3000/";
   }
-  getBookUser(scroll: number, scrollNum: number): Observable<bookingHistoryUser[]> {
+  getBookUser(scroll: number, scrollNumber: number): Observable<bookingHistoryUser[]> {
     const url = this.baseUrl + "booking";
     // return this.http.get<bookingHistoryUser[]>(url);
-    return this.http.get<bookingHistoryUser[]>(`${url}?_page=${scroll}&_limit=${scrollNum}`);
+    return this.http.get<bookingHistoryUser[]>(`${url}?_page=${scroll}&_limit=${scrollNumber}`);
   }
 }

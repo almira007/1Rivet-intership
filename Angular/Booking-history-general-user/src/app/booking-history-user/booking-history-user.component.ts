@@ -12,10 +12,10 @@ export class BookingHistoryUserComponent implements OnInit {
 
   public scroll: number;
   public scrollsize: number;
+  public studioid: any;
 
   constructor(private bookService: BookingService) {
     this.bookUser = [];
-
 
     this.scroll = 1;
     this.scrollsize = 10;
@@ -29,7 +29,8 @@ export class BookingHistoryUserComponent implements OnInit {
     this.bookService.getBookUser(this.scroll, this.scrollsize).subscribe((result) => {
       console.log(result);
       this.bookUser = this.bookUser.concat(result);
-    })
+    });
+
   }
 
   public onScroll() {

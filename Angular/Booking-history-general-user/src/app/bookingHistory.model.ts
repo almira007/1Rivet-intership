@@ -5,19 +5,28 @@
 export class bookingHistoryUser {
     public id: number;
     public date: string;
-    public name: string;
+    public studioName: string;
+    public artistName: string;
     public bookOn: string;
+    public studioType: string;
+    public bookingFor: string;
 
     constructor(
         id: number,
         date: string,
-        name: string,
-        bookOn: string
+        studioName: string,
+        artistName: string,
+        bookOn: string,
+        studioType: string,
+        bookingFor: string
     ) {
         this.id = id;
         this.date = date;
-        this.name = name;
+        this.studioName = studioName;
+        this.artistName = artistName;
         this.bookOn = bookOn;
+        this.studioType = studioType;
+        this.bookingFor = bookingFor;
     }
 
 

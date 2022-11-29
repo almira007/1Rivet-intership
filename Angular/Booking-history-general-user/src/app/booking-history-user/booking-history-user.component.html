@@ -17,7 +17,12 @@
                     <th scope="row">{{i+1}}</th>
                     <td>
                         {{items.date | date: 'dd'}}<br>{{items.date | date:'MMM'}}</td>
-                    <td>You booked <b>{{items.name}}</b> For event. </td>
+                    <td>
+                        <!-- <ng-template ngFor let-items [ngForOf]="bookUser" let-i="index"> -->
+                        <p>You booked <b> {{items.bookingFor}}</b> {{items.studioType}}</p>
+                        <!-- </ng-template> -->
+
+                    </td>
                     <td>Book On.{{items.bookOn | date:'shortDate'}}</td>
                 </tr>
             </tbody>
