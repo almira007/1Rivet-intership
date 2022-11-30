@@ -13,28 +13,49 @@ export class BookingHistoryUserComponent implements OnInit {
   public scroll: number;
   public scrollsize: number;
   public studioid: any;
+  public studio: any;
+  public artist: any;
 
-  constructor(private bookService: BookingService) {
+  constructor(private bookService: BookingService, private service: BookingService,) {
     this.bookUser = [];
+    this.studio = [];
+    this.artist = [];
 
     this.scroll = 1;
     this.scrollsize = 10;
   }
 
   ngOnInit(): void {
-    this.getBookuserData();
+    // this.getBookuserData();
+    this.getStudioUser();
+    this.getArtistUser();
   }
 
-  getBookuserData() {
-    this.bookService.getBookUser(this.scroll, this.scrollsize).subscribe((result) => {
-      console.log(result);
-      this.bookUser = this.bookUser.concat(result);
-    });
+  // // getBookuserData() {
+  // //   this.bookService.getBookUser(this.scroll, this.scrollsize).subscribe((result) => {
+  // //     console.log(result);
+  // //     this.bookUser = this.bookUser.concat(result);
+  // //   });
 
-  }
+  // }
 
   public onScroll() {
     this.scroll++;
-    this.getBookuserData();
+    this.getArtistUser();
+    this.getStudioUser();
   }
+
+  getStudioUser() {
+    this.service.getStudio(this.scroll, this.scrollsize).subscribe((result) => {
+      console.log(result);
+      this.studio = this.studio.concat(result);
+    })
+  }
+  getArtistUser() {
+    this.service.getArtist(this.scroll, this.scrollsize).subscribe((result) => {
+      console.log(result);
+      this.artist = this.artist.concat(result);
+    })
+  }
+
 }

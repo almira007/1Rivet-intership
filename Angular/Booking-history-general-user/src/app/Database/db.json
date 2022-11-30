@@ -225,5 +225,139 @@
             "studioType": "For Music class.",
             "bookingFor": "Studio"
         }
+    ],
+    "studioBooking": [
+        {
+            "id": 1,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Stylist studio",
+            "studioType": "Recoding",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 2,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Creativity studio",
+            "studioType": "Recoding Room",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 3,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Stylist studio",
+            "studioType": "Recoding",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 4,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Creativity studio",
+            "studioType": "Recoding Room",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 5,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Creativity studio",
+            "studioType": "Recoding",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 6,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Jeanette Henderson",
+            "studioType": "For Event",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 7,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "stylist studio",
+            "studioType": "Recoding",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 8,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Creativity studio",
+            "studioType": "For Event",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 9,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Kaylee Stanley",
+            "studioType": "Recoding",
+            "bookOnDate": "12-09-2022"
+        },
+        {
+            "id": 10,
+            "studioBookingDate": "11-09-2022",
+            "studioName": "Creativity studio",
+            "studioType": "Recoding",
+            "bookOnDate": "12-09-2022"
+        }
+    ],
+    "artistBooking": [
+        {
+            "id": 1,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Jack patel",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 2,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Charlie Puth",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 3,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Heni patel",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 4,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Jack patel",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 5,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Kaylee Stanley",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 6,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Kaylee Stanley",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 7,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Kaylee Stanley",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 8,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Harsh patel",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 9,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Jack patel",
+            "artistBookOnDate": "12-10-2022"
+        },
+        {
+            "id": 10,
+            "artistBookingDate": "11-10-2022",
+            "artistName": "Kaylee Stanley",
+            "artistBookOnDate": "12-10-2022"
+        }
     ]
 }

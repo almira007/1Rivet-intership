@@ -1,7 +1,7 @@
 <p>booking-history-user works!</p>
 
 <div class="pt-4 px-4">
-    <div class="overflow-auto" style="height:700px ;" infinite-scroll [infiniteScrollDistance]="2"
+    <div class="overflow-auto" style="height:600px ;" infinite-scroll [infiniteScrollDistance]="2"
         [infiniteScrollThrottle]="0" [scrollWindow]="false" (scrolled)="onScroll()">
         <table class="table table-success table-striped">
             <thead>
@@ -13,17 +13,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let items of bookUser index as i">
-                    <th scope="row">{{i+1}}</th>
-                    <td>
-                        {{items.date | date: 'dd'}}<br>{{items.date | date:'MMM'}}</td>
-                    <td>
-                        <!-- <ng-template ngFor let-items [ngForOf]="bookUser" let-i="index"> -->
-                        <p>You booked <b> {{items.bookingFor}}</b> {{items.studioType}}</p>
-                        <!-- </ng-template> -->
-
-                    </td>
-                    <td>Book On.{{items.bookOn | date:'shortDate'}}</td>
+                <tr *ngFor="let items of studio index as i">
+                    <td scope="row">{{i+1}}</td>
+                    <td>{{items.studioBookingDate | date: 'dd'}} <br>{{items.studioBookingDate | date:'MMM'}}</td>
+                    <td>You booked <b> {{items.studioName}}</b> {{items.studioType}}</td>
+                    <td>Book On.{{items.bookOnDate | date: 'M/dd/yyyy'}}</td>
+                </tr>
+                <tr *ngFor="let items of artist index as i">
+                    <td scope="row">{{i+1}}</td>
+                    <td>{{items.artistBookingDate | date: 'dd'}}<br>{{items.artistBookingDate | date: 'MMM'}}</td>
+                    <td><b> {{items.artistName}}</b> Booked For Event.</td>
+                    <td>Book On.{{items.artistBookOnDate | date: 'M/dd/yyyy'}}</td>
                 </tr>
             </tbody>
         </table>

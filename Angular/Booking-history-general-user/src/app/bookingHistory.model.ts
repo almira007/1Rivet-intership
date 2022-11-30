@@ -28,6 +28,43 @@ export class bookingHistoryUser {
         this.studioType = studioType;
         this.bookingFor = bookingFor;
     }
+}
+export class studioBooking {
+    public id: number;
+    public studioBookingDate: string;
+    public studioName: string;
+    public studioType: string;
+    public bookOnDate: string;
 
+    constructor(
+        id: number,
+        studioBookingDate: string,
+        studioName: string,
+        studioType: string,
+        bookOnDate: string
+    ) {
+        this.id = id;
+        this.studioBookingDate = studioBookingDate;
+        this.studioName = studioName;
+        this.studioType = studioType;
+        this.bookOnDate = bookOnDate;
+    }
+}
+export class artistBooking {
+    public id: number;
+    public artistBookingDate: string;
+    public artistName: string;
+    public artistBookOnDate: string;
 
+    constructor(
+        id: number,
+        artistBookingDate: string,
+        artistName: string,
+        artistBookOnDate: string,
+    ) {
+        this.id = id;
+        this.artistBookingDate = artistBookingDate;
+        this.artistName = artistName;
+        this.artistBookOnDate = artistBookOnDate;
+    }
 }
